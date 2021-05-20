@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 
-import "./App.scss";
-import Notes from "./components/notes";
+import TopBar from "./components/topBar/topbar";
+import Notes from "./components/notes/notes";
 
+import "./App.scss";
 
 const App = () => {
   let [notes, setNotes] = useState([
     {
       id: 1,
       title: "Aprender HTML",
-      completed: true
+      completed: true,
     },
     {
       id: 2,
@@ -19,20 +20,22 @@ const App = () => {
     {
       id: 3,
       title: "Aprender javaScript",
-      completed: true
+      completed: true,
     },
     {
       id: 4,
       title: "Aprender React",
       completed: false
     }
-  ])
+    
+  ]);
 	return (
-		<div>
+		<>
 			<div className="container">
+        <TopBar />
         <Notes notes={notes}/>
       </div>
-		</div>
+		</>
 	)
 }
 

@@ -1,0 +1,35 @@
+.notion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 2px;
+
+    .note-box{
+        width: calc(100% - 53%);
+        min-height: 150px;
+        margin: 5px;
+
+        border-radius: 10px;
+        background-color: #3C1F57;
+
+        cursor: pointer;
+
+        h2 {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+            background-color: #28143B;
+            color: #fff;
+
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+
+            font-weight: 400;
+            font-size: 1.25rem;
+            padding: 3px 10px;
+
+        }
+    }
+}
