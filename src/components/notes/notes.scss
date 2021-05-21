@@ -58,16 +58,19 @@
             padding: 5px 5px 0 10px;
         }
 
-        .lastEditionTime {
+        .lastEditionTimeBox {
             width: 100%;
             border-radius: 0 0 10px 10px;
             height: 30px;
             background-color: #28143B50;
-            p {
+            display: flex;
+            align-items: center;
+            p.lastEditionTime {
                 color: #8a8a8a;
                 width: 100%;
                 height: auto;
                 padding: 0 10px;
+                font-size: 0.8rem
             }
         }
     }

@@ -13,8 +13,8 @@ const NoteContent = ({ noteContent }) => {
 
                 <p className="textPreview">{noteContent.contentText}</p>
 
-                <div className="lastEditionTime">
-                    <p>21/05/2021 às 12:51</p>
+                <div className="lastEditionTimeBox">
+                    <p className="lastEditionTime">21/05/2021 às 12:51</p>
                 </div>
             </div>
         </>
