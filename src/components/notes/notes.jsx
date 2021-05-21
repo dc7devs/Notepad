@@ -1,5 +1,5 @@
 import React from "react";
-import NoteContent from "./noteContent";
+import NoteContent from "./noteContentPreview";
 
 import "./notes.scss";
 

@@ -10,22 +10,22 @@ const App = () => {
     {
       id: 1,
       title: "Aprender HTML",
-      completed: true,
+      contentText: "LoremEsto aprendendo React a 3dias, ja sabia um poucoLorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique?"
     },
     {
       id: 2,
       title: "Aprender CSS",
-      completed: true,
+      contentText: "LoremEsto aprendendo React a 3dias, ja sabia um poucoLorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique?"
     },
     {
       id: 3,
       title: "Aprender javaScript",
-      completed: true,
+      contentText: "LoremEsto aprendendo React a 3dias, ja sabia um poucoLorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique?"
     },
     {
       id: 4,
       title: "Aprender React",
-      completed: false
+      contentText: "LoremEsto aprendendo React a 3dias, ja sabia um poucoLorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deleniti quas earum provident atque est dicta. Excepturi, quibusdam minus? Aliquid corrupti saepe ullam ipsam officia eaque perferendis sequi dolore amet similique?"
     }
     
   ]);

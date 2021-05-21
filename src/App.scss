@@ -1,16 +1,13 @@
-::-webkit-scrollbar {
-    width: 1px;
-}
 .container {
     max-width: 600px;
-    min-height: 300px;
-    max-height: calc(100vh - 6vh);
+    min-height: 400px;
     margin: 30px auto;
-    overflow: auto;
+    overflow: none;
     
     border: 0px outset;
+    border-radius: 10px;
     box-shadow: 1px 1px 10px #000;
-    padding: 30px;
+    padding-top: 25px;
 
-    background-color: rgba(000, 000, 000, .3);
+    background-color: #FEFEFEa9;
 }
