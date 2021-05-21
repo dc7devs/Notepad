@@ -1,0 +1,67 @@
+.topBar {
+    position: relative;
+    height: auto;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+    padding: 25px 0 10px 10px;
+    margin-bottom: 20px;
+    border-radius: 0 0 15px 15px;
+    background-color: #3C1F57;
+
+    display: flex;
+    h1.logoIcon {
+        color:#fff;
+        margin: 5px 0 0 5px;
+        font-size: 30px;
+    }
+    .text {
+        width: 250px;
+        height: 100%;
+        margin-left: 10px;
+        display: block;
+    }
+    input {
+        width: 250px;
+        border-radius: 5px 5px 0 0;
+        border: none;
+        padding: 5px 30px 0 5px;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+    input:focus {
+        box-shadow: 0 0 0 0;
+        outline: none;
+    }
+    textarea {
+        width: 250px;
+        border-radius: 0 0 5px 5px;
+        border: none;
+        padding: 10px 0 0 10px;
+        font-size: 1rem;
+        overflow: none;
+        resize: none;
+    }
+    textarea:focus {
+        box-shadow: 0 0 0 0;
+        outline: none;
+    }
+
+    .edgesEfect{
+        position: absolute;
+        top: -10px;
+        height: 30px;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        margin-left: -30px;
+        background-image: url("../../assets/spiral.svg");
+    }
+    button {
+        font-size: 20px;
+        height: 40px;
+        background: none;
+        border: none;
+        color: #28143B;
+        margin-left: -25px;
+        cursor: pointer;
+    }
+}
