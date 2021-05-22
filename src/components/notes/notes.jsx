@@ -8,7 +8,9 @@ const Notes = ({ notes }) => {
       <div className="notion-container">
         {
           notes.map(noteContent => (
-          <NoteContent noteContent={noteContent} />
+          <NoteContent
+            noteContent={noteContent}
+          />
         ))
         }
       </div>
