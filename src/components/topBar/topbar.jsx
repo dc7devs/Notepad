@@ -14,6 +14,7 @@ const TopBar = ( {notes} ) => {
     const data = localStorage.getItem('NotePad@notes');
     const notions = data ? JSON.parse(data) : []
     
+    
   }, [])
 
   const handleSubmit = () => {
