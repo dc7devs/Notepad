@@ -7,16 +7,22 @@ import "./App.scss";
 
 const App = () => {
 
-  let [notes, setNotes] = useState([]);
+	let [notes, setNotes] = useState([]);
 
 	return (
 		<>
 			<div className="container">
-        <TopBar />
-        <Notes notes={notes}/>
-      </div>
+				<TopBar />
+				<Notes notes={notes}/>
+			</div>
 		</>
 	)
 }
 
 export default App;
+
+
+
+/*
+
+*/

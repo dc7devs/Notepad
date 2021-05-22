@@ -1,29 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { FaPlusCircle, } from 'react-icons/fa';
 import { GiSecretBook } from 'react-icons/gi';
 
 import "./topbar.scss";
 
-const TopBar = () => {
+const TopBar = ( {notes} ) => {
   const [inputTitle, setInputTitle] = useState('');
   const [inputText, setInputText] = useState('');
-
-  // const handleTitleEntryChange = (e) => {
-  //   setInputTitle(e.target.value);
-
-  // }
-  // const handleTextEntryChange = (e) =>  {
-  //   setInputText(e.target.value);
-  // }
-
-  // useEffect(() => {
-  //   const data = localStorage.getItem('NotePad@notes')
-  //   const setInputText = data ? JSON.parse(data) : []
-
-  //   setInputText(notes)
-
-  // }, [])
+  
+  useEffect(() => {
+    
+    const data = localStorage.getItem('NotePad@notes');
+    const notions = data ? JSON.parse(data) : []
+    
+  }, [])
 
   const handleSubmit = () => {
     if(!inputTitle || inputTitle === '') return console.log('error title null')
@@ -69,7 +60,6 @@ const TopBar = () => {
         >
           <FaPlusCircle/>
       </button>
-      {inputText && inputText[0].inputTitle}
     </nav>
   )
 }
