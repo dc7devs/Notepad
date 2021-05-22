@@ -4,8 +4,8 @@ import { FaPlusCircle, } from 'react-icons/fa';
 import { GiSecretBook } from 'react-icons/gi';
 
 import "./topbar.scss";
-
-const TopBar = () => {
+// ----
+const TopBar = ({ UpdateData }) => {
   const [inputTitle, setInputTitle] = useState('');
   const [inputText, setInputText] = useState('');
 
@@ -27,20 +27,12 @@ const TopBar = () => {
 
   const handleSubmit = () => {
     if(!inputTitle || inputTitle === '') return console.log('error title null')
-    const data = localStorage.getItem('NotePad@notes')
-    const oldData = data ? JSON.parse(data) : []
     
-    const note = {
-      inputTitle,
-      inputText
-    }
-
-    const newData = [
-      note,
-      ...oldData
-    ]
-
-    localStorage.setItem('NotePad@notes', JSON.stringify(newData))
+    /* Chamando UpdateData Passando Uma Nova Note Que Será Adicionada. */
+    UpdateData({
+      inputText,
+      inputTitle
+    });
   }
 
 
