@@ -10,11 +10,13 @@ const TopBar = ( {UpdateData} ) => {
   const [inputText, setInputText] = useState('');
 
   const handleSubmit = () => {
-    if(!inputTitle || inputTitle === '') return console.log('error title null')
+    if(!inputTitle || inputTitle === '') return console.log('error title null');
+
     UpdateData({
       inputTitle,
       inputText
     })
+
   }
 
   return (
@@ -25,17 +27,18 @@ const TopBar = ( {UpdateData} ) => {
       </h1>
       <div className="text">
         <input
-          onChange={e => setInputTitle(e.target.value)}
           type="text"
           placeholder="Título"
           value={inputTitle}
+          onChange={e => setInputTitle(e.target.value)}
         />
         <textarea
-        onChange={e => setInputText(e.target.value)}
-        value={inputText}
-        className="textArea"
-        placeholder="texto"
-        type="text"/>
+          className="textArea"
+          type="text"
+          value={inputText}
+          onChange={e => setInputText(e.target.value)}
+          placeholder="texto"
+        />
       </div>
 
       <button

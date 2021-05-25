@@ -46,31 +46,38 @@
                 cursor: pointer;
             }
         }
-        p.textPreview {
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            text-align: justify;
-            color: #aaa;
-            margin-bottom: 10px;
-            padding: 5px 5px 0 10px;
-        }
-
-        .lastEditionTimeBox {
-            width: 100%;
-            border-radius: 0 0 10px 10px;
-            height: 30px;
-            background-color: #28143B50;
+        .textPreviewLastEditionTimeBox {
+            height: calc(100% - 32px);
             display: flex;
-            align-items: center;
-            p.lastEditionTime {
-                color: #8a8a8a;
+            flex-direction: column;
+            justify-content: space-between;
+
+            p.textPreview {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-align: justify;
+                color: #aaa;
+                margin-bottom: 10px;
+                padding: 5px 5px 0 10px;
+            }
+    
+            .lastEditionTimeBox {
                 width: 100%;
-                height: auto;
-                padding: 0 10px;
-                font-size: 0.8rem
+                border-radius: 0 0 10px 10px;
+                height: 30px;
+                background-color: #28143B50;
+                display: flex;
+                align-items: center;
+                p.lastEditionTime {
+                    color: #8a8a8a;
+                    width: 100%;
+                    height: auto;
+                    padding: 0 10px;
+                    font-size: 0.8rem
+                }
             }
         }
     }

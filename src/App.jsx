@@ -7,21 +7,30 @@ import "./App.scss";
 
 const App = () => {
 
-	const [notes, setNotes] = useState([]);
+	const [notes, setNotes] = useState();
 
 	function UpdateData(note) {
-		const oldData = localStorage.getItem('NodePad@notes');
+		
+		const data = localStorage.getItem('NodePad@notes');
 
-		const data = oldData ? JSON.parse(oldData) : [];
+		const oldData = data ? JSON.parse(data) : [];
 
-		if(note) data.unshift(note);
+		const newData = [
+			note,
+			...oldData
+		]
 
-		localStorage.setItem('NotePad@notes', JSON.stringify(data));
+		localStorage.setItem('NotePad@notes', JSON.stringify(newData));
 
-		setNotes(data);
+		// if(note) setNotes(newData);
+		setNotes(newData);
+
 	}
 	useEffect(() => {
-		UpdateData();
+		const data = localStorage.getItem('NodePad@notes');
+		const oldData = data ? JSON.parse(data) : [];
+		
+		setNotes(oldData);
 	}, []);
 
 	return (

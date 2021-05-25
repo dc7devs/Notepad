@@ -4,32 +4,34 @@ import { HiTrash } from "react-icons/hi";
 
 const NoteContent = ({ noteContent }) => {
     return (
-        <>
+        <div
+            className="note-box"
+        >
             <div
-                className="note-box"
+                className="title"
             >
-                <div
-                    className="title"
+                <p>
+                    {noteContent.inputTitle}
+                </p>
+                <button
+                    className="trash"
                 >
-                    <p>
-                        {noteContent.title}
-                    </p>
-                    <button
-                        className="trash"
-                    >
-                        <HiTrash />
-                    </button>
-                </div>
+                    <HiTrash />
+                </button>
+            </div>
 
+            <div className="textPreviewLastEditionTimeBox">
                 <p className="textPreview">
-                    {noteContent.contentText}
+                    {noteContent.inputText}
                 </p>
 
-                <div className="lastEditionTimeBox">
+                <div
+                    className="lastEditionTimeBox"
+                >
                     <p className="lastEditionTime">21/05/2021 às 12:51</p>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 
