@@ -6,53 +6,61 @@
     margin-bottom: 20px;
     border-radius: 0 0 15px 15px;
     background-color: #3C1F57;
-    box-shadow: 0px 2px 10px #000;
-
+    box-shadow: 0px 1px 5px #000;
+    border-bottom-width: 2px;
+    border-bottom-style: inherit;
     display: flex;
+    justify-content: center;
+
     h1.logoIcon {
         color:#fff;
         margin: 0 5px;
         font-size: 2rem;
     }
-    .text {
-        width: 250px;
-        height: 100%;
-        margin-left: 10px;
-        display: block;
-        input {
+    div.contentTopBar {
+        display: flex;
+        width: 100%;
+        height: auto;
+        div.boxSubmit {
             width: 250px;
-            border-radius: 5px 5px 0 0;
-            border: none;
-            padding: 5px 30px 0 5px;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        input:focus {
-            box-shadow: 0 0 0 0;
-            outline: none;
-        }
-        textarea.textArea {
-            width: 250px;
-            text-align: justify;
-            border-radius: 0 0 5px 5px;
-            border: none;
-            padding: 5px 30px 0 10px;
-            font-size: 1rem;
-            overflow: none;
-            resize: none;
-        }
-        textarea:focus {
-            box-shadow: 0 0 0 0;
-            outline: none;
-        }
-        button.btn-addPlus {
-            position: fixed;
-            font-size: 1.2rem;
-            background: none;
-            border: none;
-            color: #28143B;
-            margin-left: -25px;
-            cursor: pointer;
+            height: 100%;
+            margin-left: 10px;
+            display: block;
+            input {
+                width: 250px;
+                border-radius: 5px 5px 0 0;
+                border: none;
+                padding: 5px 30px 0 5px;
+                font-size: 1.2rem;
+                font-weight: bold;
+            }
+            input:focus {
+                box-shadow: 0 0 0 0;
+                outline: none;
+            }
+            textarea.textArea {
+                width: 250px;
+                text-align: justify;
+                border-radius: 0 0 5px 5px;
+                border: none;
+                padding: 5px 30px 0 10px;
+                font-size: 1rem;
+                overflow: none;
+                resize: none;
+            }
+            textarea:focus {
+                box-shadow: 0 0 0 0;
+                outline: none;
+            }
+            button.btn-addPlus {
+                position: fixed;
+                font-size: 1.2rem;
+                background: none;
+                border: none;
+                color: #28143B;
+                margin-left: -25px;
+                cursor: pointer;
+            }
         }
     }
     div.edgesEfect{

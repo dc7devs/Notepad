@@ -25,33 +25,33 @@ const TopBar = ({ UpdateData }) => {
   return (
     <nav className="topBar">
       <div className="edgesEfect" />
-      <h1 className="logoIcon">
-        <GiSecretBook />
-      </h1>
-      <div className="text">
-        <input
-          type="text"
-          placeholder="Título"
-          value={inputTitle}
-          onChange={e => setInputTitle(e.target.value)}
-        />
-        <textarea
-          className="textArea"
-          type="text"
-          value={inputText}
-          onChange={e => setInputText(e.target.value)}
-          placeholder="texto"
-        />
+      <div className="contentTopBar">
+        <h1 className="logoIcon">
+          <GiSecretBook />
+        </h1>
+        <div className="boxSubmit">
+          <input
+            type="text"
+            placeholder="Título"
+            value={inputTitle}
+            onChange={e => setInputTitle(e.target.value)}
+          />
+          <textarea
+            className="textArea"
+            type="text"
+            value={inputText}
+            onChange={e => setInputText(e.target.value)}
+            placeholder="texto"
+          />
 
-        <button
-          className="btn-addPlus"
-          onClick={handleSubmit}
-        >
-          <FaPlusCircle />
-        </button>
+          <button
+            className="btn-addPlus"
+            onClick={handleSubmit}
+          >
+            <FaPlusCircle />
+          </button>
+        </div>
       </div>
-
-
     </nav>
   )
 }

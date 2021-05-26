@@ -2,9 +2,12 @@ import React from "react";
 
 import { HiTrash } from "react-icons/hi";
 
-const NoteContent = ({ noteContent }) => {
+const NoteContent = ({ noteContent, DeleteData }) => {
+    function apagar() {
+        DeleteData(noteContent)
+    }
     return (
-        <div
+        < div
             className="note-box"
         >
             <div
@@ -15,6 +18,7 @@ const NoteContent = ({ noteContent }) => {
                 </p>
                 <button
                     className="trash"
+                    onClick={apagar}
                 >
                     <HiTrash />
                 </button>
@@ -31,7 +35,7 @@ const NoteContent = ({ noteContent }) => {
                     <p className="lastEditionTime">21/05/2021 às 12:51</p>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
