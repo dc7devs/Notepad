@@ -5,12 +5,15 @@ import { GiSecretBook } from 'react-icons/gi';
 
 import "./topbar.scss";
 
-const TopBar = ( {UpdateData} ) => {
+const TopBar = ({ UpdateData }) => {
   const [inputTitle, setInputTitle] = useState('');
   const [inputText, setInputText] = useState('');
 
   const handleSubmit = () => {
-    if(!inputTitle || inputTitle === '') return console.log('error title null');
+    if (inputTitle || inputText) {
+      setInputTitle('')
+      setInputText('')
+    }
 
     UpdateData({
       inputTitle,
@@ -21,7 +24,7 @@ const TopBar = ( {UpdateData} ) => {
 
   return (
     <nav className="topBar">
-      <div className="edgesEfect"/>
+      <div className="edgesEfect" />
       <h1 className="logoIcon">
         <GiSecretBook />
       </h1>
@@ -39,14 +42,16 @@ const TopBar = ( {UpdateData} ) => {
           onChange={e => setInputText(e.target.value)}
           placeholder="texto"
         />
+
+        <button
+          className="btn-addPlus"
+          onClick={handleSubmit}
+        >
+          <FaPlusCircle />
+        </button>
       </div>
 
-      <button
-        className="btn-addPlus"
-        onClick={handleSubmit}
-        >
-          <FaPlusCircle/>
-      </button>
+
     </nav>
   )
 }
