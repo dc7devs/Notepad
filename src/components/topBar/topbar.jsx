@@ -13,6 +13,8 @@ const TopBar = ({ UpdateData }) => {
     if (inputTitle || inputText) {
       setInputTitle('')
       setInputText('')
+    } else if (!inputTitle && !inputText) {
+      return;
     }
 
     UpdateData({
