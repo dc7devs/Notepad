@@ -8,8 +8,8 @@ import "./App.scss";
 const App = () => {
 	// notes, matriz usada para inserção das notas(JSON)
 	const [notes, setNotes] = useState([]);
-	const lengthNotes = notes.length ? notes.length : 0;
-	const [idBox, setIdBox] = useState(lengthNotes);
+	// const lengthNotes = notes.length ? notes.length : 0;
+	// const [idBox, setIdBox] = useState(lengthNotes);
 
 	function UpdateData(note) {
 
@@ -18,28 +18,32 @@ const App = () => {
 		const oldData = data ? JSON.parse(data) : [];
 
 		// note recebe id
-		note.id = setIdBox(idBox + 1);
+		note.id = notes.length
 
 		const newData = [
-			note,
-			...oldData
+			...oldData,
+			note
 		]
 
 		localStorage.setItem('NotePad@notes', JSON.stringify(newData));
 
 		setNotes(newData);
-		console.log(setIdBox(idBox + 1));
+
 	}
 	function removeDataStorage(content) {
 		let storedContent = JSON.parse(localStorage.getItem("NotePad@notes"));
 
-		// storedContent.findIndex(data => data.id === content.id);
+		storedContent.slice(content.id, 1)
 
-		// var indexToRemove = storedContent.findIndex(data => data.id === content.id);
+		console.log(storedContent)
+		localStorage.setItem('NotePad@notes', JSON.stringify(storedContent));
+		
+
+		// let indexToRemove = storedContent.findIndex(data => data.id === content.id)
 
 		// localStorage.setItem('NotePad@notes', JSON.stringify(storedContent.slice(indexToRemove, 1)));
 
-		console.log(storedContent)
+		// console.log(indexToRemove)
 	}
 
 	useEffect(() => {
