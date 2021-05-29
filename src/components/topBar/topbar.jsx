@@ -5,7 +5,7 @@ import { GiSecretBook } from 'react-icons/gi';
 
 import "./topbar.scss";
 
-const TopBar = ({ UpdateData }) => {
+const TopBar = ({ CreateData }) => {
   const [inputTitle, setInputTitle] = useState('');
   const [inputText, setInputText] = useState('');
 
@@ -17,7 +17,7 @@ const TopBar = ({ UpdateData }) => {
       return;
     }
 
-    UpdateData({
+    CreateData({
       inputTitle,
       inputText
     })

@@ -2,9 +2,9 @@ import React from "react";
 
 import { HiTrash } from "react-icons/hi";
 
-const NoteContent = ({ noteContent, DeleteData }) => {
-    function apagar() {
-        DeleteData(noteContent)
+const NoteContent = ({ noteContent, RemoveData }) => {
+    const remove = () => {
+        RemoveData(noteContent)
     }
     return (
         < div
@@ -18,7 +18,7 @@ const NoteContent = ({ noteContent, DeleteData }) => {
                 </p>
                 <button
                     className="trash"
-                    onClick={apagar}
+                    onClick={remove}
                 >
                     <HiTrash />
                 </button>
