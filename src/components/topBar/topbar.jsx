@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+  import React, { useState } from "react";
 
 import { FaPlusCircle, } from 'react-icons/fa';
 import { GiSecretBook } from 'react-icons/gi';
@@ -21,7 +21,6 @@ const TopBar = ({ CreateData }) => {
       inputTitle,
       inputText
     })
-
   }
 
   return (
