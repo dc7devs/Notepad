@@ -1,3 +1,13 @@
+.mute {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    color: #FEFEFEaf;
+    border: none;
+    cursor: pointer;
+    background: radial-gradient(50% 50% at 50% 50%, #3c1f57 0%, #00000000 100%);
+}
 .container {
     max-width: 600px;
     min-height: 400px;
