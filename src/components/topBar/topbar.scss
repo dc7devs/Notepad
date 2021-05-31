@@ -7,8 +7,6 @@
     border-radius: 0 0 15px 15px;
     background-color: #3C1F57;
     box-shadow: 0px 1px 5px #000;
-    border-bottom-width: 2px;
-    border-bottom-style: inherit;
     display: flex;
     justify-content: center;
 
@@ -21,7 +19,7 @@
         display: flex;
         width: 100%;
         div.boxSubmit {
-            width: 250px;
+            max-width: 250px;
             margin-left: 10px;
             input {
                 width: 250px;

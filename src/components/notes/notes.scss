@@ -1,12 +1,18 @@
 ::-webkit-scrollbar {
     width: 1px;
 }
+.toggerBackground {
+    background-image: url("../../assets/bg-book.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 .notion-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
+    min-height: 280px;
     padding: 2px;
     max-height: calc(100vh - 30vh);
     overflow: auto;
@@ -17,14 +23,14 @@
         width: calc(100% - 53%);
         margin: 5px;
 
-        border-radius: 10px;
+        border-radius: 16px;
         background-color: #3C1F57;
 
         cursor: pointer;
         .title {
             display: flex;
             padding: 0 10px;
-            border-radius: 10px 10px 0 0;
+            border-radius: 16px 16px 0 0;
             justify-content: space-between;
             background-color: #28143B;
             color: #fff;
@@ -44,10 +50,11 @@
                 color: #fff;
                 font-size: 1.1rem;
                 cursor: pointer;
+                margin: 10px 5px 5px 0;
             }
         }
         .textPreviewLastEditionTimeBox {
-            height: calc(100% - 32px);
+            height: calc(100% - 39px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -60,13 +67,13 @@
                 text-overflow: ellipsis;
                 text-align: justify;
                 color: #aaa;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
                 padding: 5px 5px 0 10px;
             }
     
             .lastEditionTimeBox {
                 width: 100%;
-                border-radius: 0 0 10px 10px;
+                border-radius: 0 0 16px 16px;
                 height: 30px;
                 background-color: #28143B50;
                 display: flex;

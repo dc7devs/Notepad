@@ -5,9 +5,17 @@
     overflow: none;
     
     border: 0px outset;
-    border-radius: 10px;
+    border-radius: 15px;
     box-shadow: 1px 1px 10px #000;
     padding-top: 25px;
 
-    background-color: #FEFEFEa9;
+    background-color: #FEFEFEaf;
+    .myVideo {
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -999;
+    }
 }

@@ -1,22 +1,41 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
 
-import TopBar from "./components/topBar/topbar";
-import Notes from "./components/notes/notes";
+import TopBar from "./components/topBar/topbar"
+import Notes from "./components/notes/notes"
+import Footer from "./components/footer/footer"
 
-import "./App.scss";
+import "./App.scss"
+import sample from "./assets/video.mp4"
 
 const App = () => {
 	// notes, matriz usada para inserção das notas(JSON)
 	const [notes, setNotes] = useState([]);
-	const [indexNote, setIndexNote] = useState(notes.length);
+
+	// Data e Hora que a nota foi criado
+	let currentTime = new  Date()
+	let currentTimeHours = currentTime.getHours()
+	let currentTimeMinutes = currentTime.getMinutes()
+	let currentTimeDate = currentTime.getDate()
+	let currentTimeMonth = currentTime.getMonth() +1
+	if (currentTimeMonth < 10) {
+		currentTimeMonth = `0${currentTimeMonth}`
+	}
+	let currentTimeYear = currentTime.getFullYear()
+	let timeFormatted = `${currentTimeDate}/${currentTimeMonth}/${currentTimeYear} ás ${currentTimeHours}:${currentTimeMinutes}`;
+	const [time, setTime] = useState(timeFormatted);
 
 	function CreateData(note) {
 		const data = localStorage.getItem('NotePad@notes');
 		const oldData = data ? JSON.parse(data) : [];
 
 		// note recebe id
-		note.id = indexNote
-		setIndexNote(indexNote +1)
+		if(notes.length > 0)
+			note.id = (notes[notes.length -1].id +1)
+		else
+			note.id = 0
+		
+		setTime(timeFormatted)
+		note.lastEditionTime = time
 
 		const newData = [
 			...oldData,
@@ -26,11 +45,6 @@ const App = () => {
 		localStorage.setItem('NotePad@notes', JSON.stringify(newData));
 
 		setNotes(newData);
-
-		// if(oldData.length === 1 && note.id > 1) {
-		// 	setIndexNote(notes.length);
-		// 	console.log(indexNote);
-		// }
 	}
 	function RemoveData(content) {
 		let storedContent = JSON.parse(localStorage.getItem("NotePad@notes"));
@@ -63,6 +77,10 @@ const App = () => {
 					notes={notes}
 					RemoveData={RemoveData}
 				/>
+				<Footer />
+				<video className='myVideo' autoPlay="true" muted loop>
+					<source src={sample} type='video/mp4'/>
+				</video>
 			</div>
 		</>
 	)

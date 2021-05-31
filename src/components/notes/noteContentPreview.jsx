@@ -2,9 +2,14 @@ import React from "react";
 
 import { HiTrash } from "react-icons/hi";
 
-const NoteContent = ({ noteContent, RemoveData }) => {
+const NoteContentPreview = ({ noteContent, RemoveData }) => {
+    let container = document.querySelector("main.notion-container")
+    if (noteContent) {
+        container.classList.remove("toggerBackground")
+    } 
     const remove = () => {
         RemoveData(noteContent)
+        container.classList.add("toggerBackground")
     }
     return (
         < div
@@ -32,11 +37,11 @@ const NoteContent = ({ noteContent, RemoveData }) => {
                 <div
                     className="lastEditionTimeBox"
                 >
-                    <p className="lastEditionTime">21/05/2021 às 12:51</p>
+                    <p className="lastEditionTime">{noteContent.lastEditionTime}</p>
                 </div>
             </div>
-        </div >
+        </div>
     )
 }
 
-export default NoteContent;
+export default NoteContentPreview;

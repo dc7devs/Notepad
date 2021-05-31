@@ -35,6 +35,7 @@ const TopBar = ({ CreateData }) => {
             type="text"
             placeholder="Título"
             value={inputTitle}
+            autoFocus
             onChange={e => setInputTitle(e.target.value)}
           />
           <textarea
