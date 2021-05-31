@@ -15,7 +15,7 @@ const App = () => {
 	// notes, matriz usada para inserção das notas(JSON)
 	const [notes, setNotes] = useState([])
 	const [isUpNotes, setIsUpNotes] = useState(false)
-	const [isMute, setIsMute] = useState(false)
+	const [isMute, setIsMute] = useState(true)
 
 	useEffect(() => {
 		setNotes(notesController.find())
