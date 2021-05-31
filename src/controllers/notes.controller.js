@@ -1,4 +1,4 @@
-export default new class NoteController {
+export default class NoteController {
     find() {
         const data = localStorage.getItem('NotePad@notes')
         return data ? JSON.parse(data) : []

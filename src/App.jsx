@@ -4,10 +4,12 @@ import { FaVolumeMute, FaVolumeUp } from "react-icons/fa"
 import TopBar from "./components/topBar/topbar"
 import Notes from "./components/notes/notes"
 import Footer from "./components/footer/footer"
-import notesController from "./controllers/notes.controller"
+import NotesController from "./controllers/notes.controller"
 
 import "./App.scss"
 import sample from "./assets/video.mp4"
+
+const notesController = new NotesController()
 
 const App = () => {
 	// notes, matriz usada para inserção das notas(JSON)
