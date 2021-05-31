@@ -9,7 +9,7 @@ const Footer = () => {
             <a 
                 href="https://www.linkedin.com/in/diego-c-silva-487b171a5"
                 target="_blank"
-                rel="Linkedin"
+                rel="noreferrer"
                 className="icon"
             >
                 <FaLinkedin />
@@ -17,15 +17,15 @@ const Footer = () => {
             <a
                 href="https://github.com/Diego-DevsS"
                 target="_blank"
+                rel="noreferrer"
                 className="icon"
-                rel="GitHub"
             >
                     <FaGithub />
             </a>
             <a 
                 href="https://twitter.com/DiegoSi06829718"
                 target="_blank"
-                rel="twitter"
+                rel="noreferrer"
                 className="icon"
             >
                 <FaTwitter />
