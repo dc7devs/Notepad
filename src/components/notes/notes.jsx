@@ -9,6 +9,7 @@ const Notes = ({ notes, RemoveData }) => {
       {
         notes.map(noteContent => (
           <NoteContentPreview
+            key={noteContent.id}
             noteContent={noteContent}
             RemoveData={RemoveData}
           />

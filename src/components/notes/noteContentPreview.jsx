@@ -1,6 +1,8 @@
-import React from "react";
+import React from "react"
 
-import { HiTrash } from "react-icons/hi";
+import { HiTrash } from "react-icons/hi"
+import { format } from "date-fns"
+
 
 const NoteContentPreview = ({ noteContent, RemoveData }) => {
     let container = document.querySelector("main.notion-container")
@@ -37,7 +39,7 @@ const NoteContentPreview = ({ noteContent, RemoveData }) => {
                 <div
                     className="lastEditionTimeBox"
                 >
-                    <p className="lastEditionTime">{noteContent.lastEditionTime}</p>
+                    <p className="lastEditionTime">{format(new Date(noteContent.dateEdition), "dd/MM/yyyy | HH:mm")}</p>
                 </div>
             </div>
         </div>
