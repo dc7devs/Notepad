@@ -4,15 +4,20 @@ import { FaVolumeMute, FaVolumeUp } from "react-icons/fa"
 import TopBar from "./components/topBar/topbar"
 import Notes from "./components/notes/notes"
 import Footer from "./components/footer/footer"
-import NotesController from "./controllers/notes.controller"
+import PapyruNote from "./components/ papyrunote/papyruNote"
+import NoteController from "./controlers/notes.controllers"
 
 import "./App.scss"
 import sample from "./assets/video.mp4"
+import { IoMdVolumeOff, IoMdVolumeHigh } from "react-icons/io"
+
+const noteController = new NoteController()
 
 const notesController = new NotesController()
 
 const App = () => {
 	// notes, matriz usada para inserção das notas(JSON)
+
 	const [notes, setNotes] = useState([])
 	const [isUpNotes, setIsUpNotes] = useState(false)
 	const [isMute, setIsMute] = useState(true)
@@ -34,7 +39,7 @@ const App = () => {
 
 		setIsUpNotes(true)
 	}
-
+	
 	return (
 		<>
 			<button 
@@ -51,7 +56,7 @@ const App = () => {
 				<TopBar CreateData={handleCreateNote} />
 				<Notes notes={notes} RemoveData={handleRemoveNote} />
 				<Footer />
-				<video className='myVideo' autoPlay={true} muted={isMute} loop={true}>
+				<video className='myVideo' autoPlay muted={isMute} loop>
 					<source src={sample} type='video/mp4'/>
 				</video>
 			</div>

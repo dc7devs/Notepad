@@ -25,19 +25,19 @@
 
         border-radius: 16px;
         background-color: #3C1F57;
-
-        cursor: pointer;
-        .title {
+        .titlePreview {
             display: flex;
             padding: 0 10px;
             border-radius: 16px 16px 0 0;
             justify-content: space-between;
             background-color: #28143B;
             color: #fff;
+            align-items: center;
+            cursor: pointer;
             p {
                 width: auto;
                 font-weight: 500;
-                font-size: 1.25rem;
+                font-size: 1.15rem;
                 padding: 3px 10px;
 
                 text-overflow: ellipsis;
@@ -67,6 +67,7 @@
                 text-overflow: ellipsis;
                 text-align: justify;
                 color: #aaa;
+                font-size: 1.05rem;
                 margin-bottom: 5px;
                 padding: 5px 5px 0 10px;
             }

@@ -3,24 +3,27 @@ import React from "react"
 import { HiTrash } from "react-icons/hi"
 import { format } from "date-fns"
 
-
 const NoteContentPreview = ({ noteContent, RemoveData }) => {
     let container = document.querySelector("main.notion-container")
     if (noteContent) {
         container.classList.remove("toggerBackground")
-    } 
-    const remove = () => {
-        RemoveData(noteContent)
+    } else {
         container.classList.add("toggerBackground")
     }
+    const remove = () => {
+        RemoveData(noteContent)
+    }
+    function ale() {
+        alert("OK")
+    }
     return (
-        < div
+        <div
             className="note-box"
         >
             <div
-                className="title"
+                className="titlePreview"
             >
-                <p>
+                <p onClick={ale}>
                     {noteContent.inputTitle}
                 </p>
                 <button
@@ -39,7 +42,7 @@ const NoteContentPreview = ({ noteContent, RemoveData }) => {
                 <div
                     className="lastEditionTimeBox"
                 >
-                    <p className="lastEditionTime">{format(new Date(noteContent.dateEdition), "dd/MM/yyyy | HH:mm")}</p>
+                    <p className="lastEditionTime">{format(new Date(noteContent.dateEdition), "dd/MM/yyyy 'ás' HH:mm")}</p>
                 </div>
             </div>
         </div>
