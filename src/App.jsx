@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react"
 
-import { FaVolumeMute, FaVolumeUp } from "react-icons/fa"
+import { IoMdVolumeOff, IoMdVolumeHigh } from "react-icons/io"
 import TopBar from "./components/topBar/topbar"
 import Notes from "./components/notes/notes"
 import Footer from "./components/footer/footer"
-import PapyruNote from "./components/ papyrunote/papyruNote"
-import NoteController from "./controlers/notes.controllers"
+import NotesController from "./controllers/notes.controller"
 
 import "./App.scss"
 import sample from "./assets/video.mp4"
-import { IoMdVolumeOff, IoMdVolumeHigh } from "react-icons/io"
-
-const noteController = new NoteController()
 
 const notesController = new NotesController()
 
@@ -47,9 +43,9 @@ const App = () => {
 				onClick={() => setIsMute(!isMute)}
 			>
 				{isMute? 
-					<FaVolumeMute/>
+					<IoMdVolumeOff/>
 					:
-					<FaVolumeUp/>
+					<IoMdVolumeHigh/>
 				}
 			</button>
 			<div className="container">
