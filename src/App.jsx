@@ -16,11 +16,11 @@ const App = () => {
 
 	const [notes, setNotes] = useState([])
 	const [isUpNotes, setIsUpNotes] = useState(false)
-	const [isMute, setIsMute] = useState(true)
+	const [isMuted, setIsMuted] = useState(true)
 
 	useEffect(() => {
 		setNotes(notesController.find())
-
+		
 		setIsUpNotes(false)
 	}, [isUpNotes])
 
@@ -40,9 +40,9 @@ const App = () => {
 		<>
 			<button 
 				className="mute"
-				onClick={() => setIsMute(!isMute)}
+				onClick={() => setIsMuted(!isMuted)}
 			>
-				{isMute? 
+				{isMuted? 
 					<IoMdVolumeOff/>
 					:
 					<IoMdVolumeHigh/>
@@ -52,7 +52,7 @@ const App = () => {
 				<TopBar CreateData={handleCreateNote} />
 				<Notes notes={notes} RemoveData={handleRemoveNote} />
 				<Footer />
-				<video className='myVideo' autoPlay muted={isMute} loop>
+				<video className='myVideo' autoPlay muted={isMuted} loop>
 					<source src={sample} type='video/mp4'/>
 				</video>
 			</div>
