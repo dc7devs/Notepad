@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react"
 import TopBar from "./components/topBar/topbar"
 import Notes from "./components/notes/notes"
 import Footer from "./components/footer/footer"
+import PapyruNote from "./components/ papyrunote/papyruNote"
 import NoteController from "./controlers/notes.controllers"
 
 import "./App.scss"
@@ -54,6 +55,7 @@ const App = () => {
 					RemoveData={handleRemoveNote}
 				/>
 				<Footer />
+				{/* <PapyruNote /> */}
 				<video
 					className='myVideo'
 					autoPlay

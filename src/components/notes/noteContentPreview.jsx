@@ -13,14 +13,17 @@ const NoteContentPreview = ({ noteContent, RemoveData }) => {
     const remove = () => {
         RemoveData(noteContent)
     }
+    function ale() {
+        alert("OK")
+    }
     return (
-        < div
+        <div
             className="note-box"
         >
             <div
-                className="title"
+                className="titlePreview"
             >
-                <p>
+                <p onClick={ale}>
                     {noteContent.inputTitle}
                 </p>
                 <button

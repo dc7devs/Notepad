@@ -1,0 +1,38 @@
+.papyruWidow {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    justify-content: center;
+    background-color: #1715159f;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    .papyruImg {
+        z-index: -1;
+        background: none;
+        width: 500px;
+    }
+    .papyruContent {
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        width: 350px;
+        height: 550px;
+        position: absolute;
+        .title {
+            color: #171515;
+            padding: 10px;
+            font-size: 1.3rem;
+        }
+        .text {
+            color: #171515df;
+            overflow: auto;
+            // background: #00000000;
+            text-align: justify;
+            padding: 10px 15px;
+            border-radius: 15px;
+        }
+        
+    }
+}
