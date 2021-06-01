@@ -23,8 +23,7 @@ export default class NoteController {
     remove(removeNote) {
         const notes = this.find()
         //remove note with note.id
-        notes.splice(notes.find((note) => note.id === removeNote.id), 1)
-        console.log('note', notes)
+        notes.splice(notes.findIndex((note) => note.id === removeNote.id), 1)
         localStorage.setItem('NotePad@notes', JSON.stringify(notes))
         
         return notes
