@@ -4,7 +4,7 @@ import TopBar from "./components/topBar/topbar"
 import Notes from "./components/notes/notes"
 import Footer from "./components/footer/footer"
 import PapyruNote from "./components/ papyrunote/papyruNote"
-import NoteController from "./controlers/notes.controllers"
+import NoteController from "./controllers/notes.controllers"
 
 import "./App.scss"
 import sample from "./assets/video.mp4"
