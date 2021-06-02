@@ -17,6 +17,16 @@ const App = () => {
 	const [notes, setNotes] = useState([]);
 	const [isMuted, setIsMuted] = useState(true)
 	const [isUpNotes, setIsUpNotes] = useState(false)
+	const [isPapyru, setIsPapyru] = useState(false)
+	const [content, setContent] = useState([])
+
+	function openPapyru(content) {
+		setIsPapyru(true)
+		setContent(content)
+	}
+	function closePapyru() {
+		setIsPapyru(false)
+	}
 
 	useEffect(() => {
 		setNotes(noteController.find())
@@ -35,7 +45,13 @@ const App = () => {
 
 		setIsUpNotes(true)
 	}
-	
+
+	function handleUpdateNote(updateNote) {
+		noteController.update(updateNote)
+
+		setIsUpNotes(true)
+	}
+
 	return (
 		<>
 			<div className="container">
@@ -53,9 +69,18 @@ const App = () => {
 				<Notes
 					notes={notes}
 					RemoveData={handleRemoveNote}
+					openPapyru={openPapyru}
 				/>
 				<Footer />
-				{/* <PapyruNote /> */}
+				{
+					isPapyru ?
+						<PapyruNote
+							content={content}
+							closePapyru={closePapyru}
+							UpdateData={handleUpdateNote}
+						/>
+					: isPapyru
+				}
 				<video
 					className='myVideo'
 					autoPlay

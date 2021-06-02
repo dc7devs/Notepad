@@ -3,7 +3,7 @@ import NoteContentPreview from "./noteContentPreview";
 
 import "./notes.scss";
 
-const Notes = ({ notes, RemoveData }) => {
+const Notes = ({ notes, RemoveData, openPapyru }) => {
   return (
     <main className="notion-container toggerBackground">
       {
@@ -12,6 +12,7 @@ const Notes = ({ notes, RemoveData }) => {
             key={noteContent.id}
             noteContent={noteContent}
             RemoveData={RemoveData}
+            openPapyru={openPapyru}
           />
         ))
       }

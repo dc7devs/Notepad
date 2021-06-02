@@ -11,28 +11,81 @@
     .papyruImg {
         z-index: -1;
         background: none;
-        width: 500px;
+        width: 550px;
+        max-width: 600px;
+    }
+    .close {
+        position: fixed;
+        font-size: 2.5rem;
+        // top: 20px;
+        right: 50px;
+        
+        color: #f1c888;
+    }
+    .close:hover {
+        color: #280300;
+    }
+    button {
+        bottom: 0;
+        border: none;
+        background: none;
+        color: #280300;
+        cursor: pointer;
     }
     .papyruContent {
         display: flex;
+        align-items: center;
         flex-direction: column;
         padding: 10px 0;
-        width: 350px;
-        height: 550px;
+        width: 440px;
+        height: 600px;
         position: absolute;
-        .title {
-            color: #171515;
-            padding: 10px;
-            font-size: 1.3rem;
+        .controls {
+            align-self: flex-end;
+            width: 100px;
+            display: flex;
+            justify-content: space-around;
+            .save {
+                font-size: 1.5rem;            
+            }
+            .edit {
+                font-size: 1.5rem;
+            }
         }
-        .text {
-            color: #171515df;
+        h1.title {
+            color: #280300;
+            padding: 0 10px;
+            font-size: 1.5rem;
+            align-self: flex-start;
+        }
+        h1.title[contenteditable] {
+            width: 100%;
+            border: 0;
+            box-shadow: 0 0 0 0;
+            outline: none;
+        }
+        p.text {
+            color: #84360d;
             overflow: auto;
-            // background: #00000000;
             text-align: justify;
             padding: 10px 15px;
             border-radius: 15px;
+            font-size: 1.2rem;
+            align-self: flex-start;
         }
-        
+        p.text[contentEditable]{
+            min-width: 450px;
+            border: 0;
+            box-shadow: 0 0 0 0;
+            outline: none;
+        }
+        .pageNumber {
+            position: absolute;
+            bottom: -10px;
+            left: -10px;
+            align-self: flex-start;
+            right: 0;
+            font-size: 20px;
+        }
     }
 }

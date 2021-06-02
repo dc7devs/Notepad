@@ -3,7 +3,10 @@ import React from "react"
 import { HiTrash } from "react-icons/hi"
 import { format } from "date-fns"
 
-const NoteContentPreview = ({ noteContent, RemoveData }) => {
+const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
+    function open(){
+        openPapyru(noteContent)
+    }
     let container = document.querySelector("main.notion-container")
     if (noteContent) {
         container.classList.remove("toggerBackground")
@@ -13,9 +16,6 @@ const NoteContentPreview = ({ noteContent, RemoveData }) => {
     const remove = () => {
         RemoveData(noteContent)
     }
-    function ale() {
-        alert("OK")
-    }
     return (
         <div
             className="note-box"
@@ -23,7 +23,9 @@ const NoteContentPreview = ({ noteContent, RemoveData }) => {
             <div
                 className="titlePreview"
             >
-                <p onClick={ale}>
+                <p
+                    onClick={open}
+                >
                     {noteContent.inputTitle}
                 </p>
                 <button
@@ -35,7 +37,10 @@ const NoteContentPreview = ({ noteContent, RemoveData }) => {
             </div>
 
             <div className="textPreviewLastEditionTimeBox">
-                <p className="textPreview">
+                <p
+                    className="textPreview"
+                    onClick={open}
+                >
                     {noteContent.inputText}
                 </p>
 

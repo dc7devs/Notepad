@@ -32,6 +32,7 @@ const TopBar = ({ CreateData }) => {
         </h1>
         <div className="boxSubmit">
           <input
+            className="titleArea"
             type="text"
             placeholder="Título"
             value={inputTitle}

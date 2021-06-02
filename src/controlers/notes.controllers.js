@@ -23,16 +23,24 @@ export default class NoteController {
     }
     remove(removeNote) {
         const notes = this.find()
-		notes.splice(removeNote.id, 1)
-
-		// Atualização dos IDs restantes, apos a remoção
-		let idOperation = notes.slice(removeNote.id, notes.length +1)
-		for (let i in idOperation) {
-			idOperation[i].id = idOperation[i].id -1;
-		}
+        notes.splice(notes.findIndex(note => note.id === removeNote.id), 1)
 
 		localStorage.setItem('NotePad@notes', JSON.stringify(notes));
 
         return notes
+    }
+    update(updateNote) {
+        const oldData = this.find()
+        const idNote = updateNote.id
+        
+        for(let i in oldData) {
+            if(oldData[i].id === idNote) {
+                oldData[i].inputTitle = updateNote.inputTitle
+                oldData[i].inputText = updateNote.inputText
+                
+                localStorage.setItem('NotePad@notes', JSON.stringify(oldData));
+                return oldData;
+            }
+        }
     }
 }

@@ -12,9 +12,9 @@
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    min-height: 280px;
+    min-height: 340px;
     padding: 2px;
-    max-height: calc(100vh - 30vh);
+    max-height: 67vh;
     overflow: auto;
 
     .note-box{
@@ -24,7 +24,7 @@
         margin: 5px;
 
         border-radius: 16px;
-        background-color: #3C1F57;
+        background-color: #431864;
         .titlePreview {
             display: flex;
             padding: 0 10px;
@@ -35,7 +35,7 @@
             align-items: center;
             cursor: pointer;
             p {
-                width: auto;
+                width: 100%;
                 font-weight: 500;
                 font-size: 1.15rem;
                 padding: 3px 10px;
@@ -70,6 +70,7 @@
                 font-size: 1.05rem;
                 margin-bottom: 5px;
                 padding: 5px 5px 0 10px;
+                cursor: pointer;
             }
     
             .lastEditionTimeBox {

@@ -1,5 +1,5 @@
 .container {
-    max-width: 600px;
+    max-width: 700px;
     min-height: 400px;
     margin: 30px auto;
     overflow: none;
@@ -27,6 +27,75 @@
         color: #FEFEFEaf;
         font-size: 1.5rem;
         cursor: pointer;
-        z-index: 1;
+    }
+}
+// responsive
+@media (max-width: 689px) {
+    .container {
+        .notion-container {
+            max-height: auto;
+        }
+        .muted {
+            right: 10px;
+            top: 128px;
+            color: #FEFEFEdf;
+        }
+        .topBar div.contentTopBar {
+            h1.logoIcon {
+                font-size: 2.1rem;
+                margin: 0;
+            }
+            div.boxSubmit {
+                padding: 0 10px;
+                input.titleArea {
+                    font-size: 1.7rem;
+                }
+                textarea.textArea {
+                    font-size: 1.2rem;
+                    padding-right: 35px
+                }
+                button.btn-addPlus {
+                    font-size: 1.5rem;
+                    margin-left: -30px;
+                }
+            }
+        }
+        .footerContainer a {
+            font-size: 1.3rem;
+        }
+    }
+}
+@media (max-width: 425px) {
+    .container {
+        height: 100vh;
+        margin: 0;
+        border-radius: 0;
+        .topBar {
+            margin: 0;
+            div.contentTopBar div.boxSubmit {
+                height: 100%;
+                textarea.textArea {
+                    font-size: 1.2rem;
+                    padding-right: 35px;
+    
+                    max-width: 1000px;
+                    text-align: justify;
+                }
+            }
+        }
+        .notion-container {
+            margin-top: 20px;
+            flex-wrap: wrap;
+            height: 500px;
+            .note-box {
+                width: calc(100% - 10px);
+                height: 140px;
+            }
+        }
+        .footerContainer {
+            position: fixed;
+            bottom: 0;
+            border-radius: 0;
+        }
     }
 }
