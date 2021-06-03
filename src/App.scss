@@ -49,10 +49,13 @@
 
                 width: 100vw;
                 height: auto;
-                max-height: 100vh;
+                max-height: 95vh;
 
                 p.text  {
                     min-height: 38px;
+                }
+                p.text[contentEditable]{
+                    max-height: 350px;
                 }
 
                 .controls {

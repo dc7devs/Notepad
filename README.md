@@ -1,6 +1,7 @@
 <div align="center">
-<img align="center" width="50" src=".github/bg-book.png">
+<img align="center" width="90" src=".github/bg-book.png">
 </div>
+<br>
 
 <h1 align="center">Lisa`s Notes</h1>
 
