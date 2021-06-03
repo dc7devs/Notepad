@@ -39,7 +39,7 @@
         .notion-container {
             margin-top: 20px;
             flex-wrap: wrap;
-            height: 600px;
+            min-height: 450px;
             .note-box {
                 width: calc(100% - 10px);
                 height: 140px;
