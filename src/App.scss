@@ -27,17 +27,18 @@
         color: #FEFEFEaf;
         font-size: 1.5rem;
         cursor: pointer;
+        z-index: 1;
     }
 }
 // responsive
-@media (max-width: 689px) {
+@media (max-width: 768px) {
     .container {
         .notion-container {
             max-height: auto;
         }
         .muted {
-            right: 10px;
-            top: 128px;
+            left: 10px;
+            top: 138px;
             color: #FEFEFEdf;
         }
         .topBar div.contentTopBar {

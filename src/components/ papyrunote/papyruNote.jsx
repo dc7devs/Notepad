@@ -12,15 +12,19 @@ const PapyruNote = ({ content, closePapyru, UpdateData }) => {
         closePapyru()
     }
     function toEdit() {
-        let title = document.querySelector(".title")
-        let text = document.querySelector(".text")
-        if(title.hasAttribute("contentEditable") === false && text.hasAttribute("contentEditable") === false) {
-            title.setAttribute("contentEditable","")
-            text.setAttribute("contentEditable","")
+        let titleTag = document.querySelector(".title")
+        let textTag = document.querySelector(".text")
+        if(titleTag.hasAttribute("contentEditable") === false && titleTag.hasAttribute("contentEditable") === false) {
+            titleTag.setAttribute("contentEditable","")
+            textTag.setAttribute("contentEditable","")
         }
     }
     const [title, setTitle] = useState(content.inputTitle);
-    const [text, setText] = useState(content.inputText)
+    const [text, setText] = useState(content.inputText);
+
+    console.log(title)
+    console.log(text)
+
     let id = content.id
     function update() {
         UpdateData({
@@ -28,6 +32,10 @@ const PapyruNote = ({ content, closePapyru, UpdateData }) => {
             text,
             id
         })
+    }
+    function handleSave() {
+        update()
+        close()
     }
 
     return (
@@ -46,13 +54,13 @@ const PapyruNote = ({ content, closePapyru, UpdateData }) => {
                     <button className="edit" onClick={toEdit}>
                         <FiEdit />
                     </button>
-                    <button className="save" onClick={update}>
+                    <button className="save" onClick={handleSave}>
                         <FaSave />
                     </button>
                 </div>
-                <h1 className="title" onChange={e => setTitle(e.target.value)}>{content.inputTitle}</h1>
+                <h1 className="title" onInput={(e)=> setTitle(e.target.innerText)}>{content.inputTitle}</h1>
 
-                <p className="text" onChange={e => setText(e.target.value)}>{content.inputText}</p>
+                <p className="text" onInput={(e) => setText(e.target.innerText)}>{content.inputText}</p>
                 <small className="pageNumber">
                     {content.id}
                 </small>

@@ -30,17 +30,19 @@ export default class NoteController {
         return notes
     }
     update(updateNote) {
-        const oldData = this.find()
+        const notes = this.find()
         const idNote = updateNote.id
+
+        // console.log(updateNote)
         
-        for(let i in oldData) {
-            if(oldData[i].id === idNote) {
-                oldData[i].inputTitle = updateNote.inputTitle
-                oldData[i].inputText = updateNote.inputText
-                
-                localStorage.setItem('NotePad@notes', JSON.stringify(oldData));
-                return oldData;
+        for(let i in notes) {
+            if(notes[i].id === idNote) {
+                notes[i].inputTitle = updateNote.title
+                notes[i].inputText = updateNote.text
             }
         }
+        // console.log(notes)
+        localStorage.setItem('NotePad@notes', JSON.stringify(notes));
+        return notes;
     }
 }
