@@ -57,6 +57,9 @@
                 p.text[contentEditable]{
                     min-width: 300px;
                 }
+                .controls {
+                    margin: 10px 0;
+                }
             }
             .pageNumber {
                 display: static;
@@ -67,10 +70,7 @@
                 z-index: 1;
                 bottom: 20px;
                 right: 10px;
-                color: #280300;
-                :hover {
-                    color: #f1c888;
-                }
+                color: #f1c888;
             }
             
         }
