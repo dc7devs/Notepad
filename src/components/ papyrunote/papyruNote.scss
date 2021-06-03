@@ -17,7 +17,6 @@
     .close {
         position: fixed;
         font-size: 2.5rem;
-        // top: 20px;
         right: 50px;
         
         color: #f1c888;
@@ -53,12 +52,14 @@
             }
         }
         h1.title {
+            max-width: 100%;
+            word-wrap: break-word;
+            font-size: 1.5rem;
+            align-self: flex-start;
             color: #280300;
             background-color: #2803001f;
             border-radius: 15px;
             padding: 0 10px;
-            font-size: 1.5rem;
-            align-self: flex-start;
         }
         h1.title[contenteditable] {
             width: 100%;
@@ -67,6 +68,8 @@
             outline: none;
         }
         p.text {
+            max-width: 100%;
+            word-wrap: break-word;
             color: #84360d;
             background-color: #2803001f;
             overflow: auto;
@@ -77,7 +80,6 @@
             align-self: flex-start;
         }
         p.text[contentEditable]{
-            min-width: 400px;
             border: 0;
             box-shadow: 0 0 0 0;
             outline: none;

@@ -42,13 +42,17 @@
                 background: radial-gradient(circle, #f1c888,#f1c888, #994815);
                 border-radius: 15px;
                 padding: 30px;
-                position: fixed;
-                width: 400px;
-                min-width: auto;
-                height: 600px;
-                p.text[contentEditable]{
-                    min-width: 300px;
+                overflow: auto;
+
+                width: 100vw;
+                min-height: auto;
+                height: auto;
+                max-height: 100vh;
+
+                p.text  {
+                    min-height: 38px;
                 }
+
                 .controls {
                     margin: 10px 0;
                 }
@@ -59,9 +63,11 @@
                 margin-bottom: 20px;
             }
             .close {
-                bottom: 20px;
-                right: 10px;
-                color: #f1c888;
+                z-index: 1;
+                font-size: 2rem;
+                bottom: 10px;
+                right: 0;
+                color: #994815;
             }
             
         }
@@ -70,10 +76,7 @@
         }
         .topBar {
             .muted {
-                position: absolute;
-                left: 15px;
-                bottom: 0;
-                color: #FEFEFEdf;
+                display: none;
             }
             div.contentTopBar {
                 h1.logoIcon {
@@ -103,23 +106,6 @@
             border-radius: 0;
             a {
                 font-size: 1.3rem;
-            }
-        }
-    }
-}
-@media (max-width: 425px) {
-    .container {
-        .topBar {
-            margin: 0;
-            div.contentTopBar div.boxSubmit {
-                height: 100%;
-                textarea.textArea {
-                    font-size: 1.2rem;
-                    padding-right: 35px;
-    
-                    max-width: 1000px;
-                    text-align: justify;
-                }
             }
         }
     }
