@@ -5,7 +5,6 @@ import { FiEdit } from "react-icons/fi"
 import { FaSave } from "react-icons/fa"
 
 import "./papyruNote.scss"
-import papyruimg from "../../assets/th.png"
 
 const PapyruNote = ({ content, closePapyru, UpdateData }) => {
     function close () {
@@ -47,8 +46,6 @@ const PapyruNote = ({ content, closePapyru, UpdateData }) => {
                 <RiCloseCircleLine />
             </button>
 
-            <img className="papyruImg" src={papyruimg} alt="bg"/>
-
             <div className="papyruContent">
                 <div className="controls">
                     <button className="edit" onClick={toEdit}>
@@ -60,7 +57,10 @@ const PapyruNote = ({ content, closePapyru, UpdateData }) => {
                 </div>
                 <h1 className="title" onInput={(e)=> setTitle(e.target.innerText)}>{content.inputTitle}</h1>
 
-                <p className="text" onInput={(e) => setText(e.target.innerText)}>{content.inputText}</p>
+                <code className="text" onInput={(e) => setText(e.target.innerText)}>{content.inputText}</code>
+
+                {/* <code></code> */}
+
                 <small className="pageNumber">
                     {content.id}
                 </small>

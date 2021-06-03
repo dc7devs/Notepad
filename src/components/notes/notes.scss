@@ -59,13 +59,12 @@
             flex-direction: column;
             justify-content: space-between;
 
-            p.textPreview {
+            code.textPreview {
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                text-align: justify;
                 color: #aaa;
                 font-size: 1.05rem;
                 margin-bottom: 5px;

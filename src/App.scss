@@ -37,9 +37,6 @@
         }
         .papyruWidow {
             z-index: 1;
-            .papyruImg {
-                display: none;
-            }
             .papyruContent {
                 top: 20px;
                 background: radial-gradient(circle, #f1c888,#f1c888, #994815);
@@ -51,10 +48,10 @@
                 height: auto;
                 max-height: 95vh;
 
-                p.text  {
+                code.text  {
                     min-height: 38px;
                 }
-                p.text[contentEditable]{
+                code.text[contentEditable]{
                     max-height: 350px;
                 }
 

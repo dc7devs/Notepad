@@ -8,12 +8,6 @@
     left: 0;
     display: flex;
     align-items: center;
-    .papyruImg {
-        z-index: -1;
-        background: none;
-        width: 550px;
-        max-width: 600px;
-    }
     .close {
         position: fixed;
         font-size: 2.5rem;
@@ -35,10 +29,18 @@
         display: flex;
         align-items: center;
         flex-direction: column;
-        padding: 10px 0;
-        width: 440px;
-        height: 600px;
-        position: absolute;
+
+        width: 70vh;
+        min-height: 90vh;
+
+        padding: 20vh 50px 15vh 50px;
+        background-image: url("../../assets/th.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+
+        height: auto;
+        max-height: 95vh;
         .controls {
             align-self: flex-end;
             width: 100px;
@@ -58,7 +60,6 @@
             align-self: flex-start;
             color: #280300;
             background-color: #2803001f;
-            border-radius: 15px;
             padding: 0 10px;
         }
         h1.title[contenteditable] {
@@ -67,7 +68,7 @@
             box-shadow: 0 0 0 0;
             outline: none;
         }
-        p.text {
+        code.text {
             max-width: 100%;
             word-wrap: break-word;
             color: #84360d;
@@ -75,11 +76,12 @@
             overflow: auto;
             text-align: justify;
             padding: 10px 15px;
-            border-radius: 15px;
+            border-radius: 0 0 15px 15px;
             font-size: 1.2rem;
             align-self: flex-start;
         }
-        p.text[contentEditable]{
+        code.text[contentEditable]{
+            width: 100%;
             border: 0;
             box-shadow: 0 0 0 0;
             outline: none;

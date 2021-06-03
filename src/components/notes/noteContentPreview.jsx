@@ -37,12 +37,12 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
             </div>
 
             <div className="textPreviewLastEditionTimeBox">
-                <p
+                <code
                     className="textPreview"
                     onClick={open}
                 >
                     {noteContent.inputText}
-                </p>
+                </code>
 
                 <div
                     className="lastEditionTimeBox"
