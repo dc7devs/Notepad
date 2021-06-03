@@ -2,10 +2,11 @@
 
 import { FaPlusCircle, } from 'react-icons/fa';
 import { GiSecretBook } from 'react-icons/gi';
+import { IoMdVolumeOff, IoMdVolumeHigh } from "react-icons/io"
 
 import "./topbar.scss";
 
-const TopBar = ({ CreateData }) => {
+const TopBar = ({ CreateData, isMuted, setIsMuted}) => {
   const [inputTitle, setInputTitle] = useState('');
   const [inputText, setInputText] = useState('');
 
@@ -25,6 +26,14 @@ const TopBar = ({ CreateData }) => {
 
   return (
     <nav className="topBar">
+      <button
+					className="muted"
+					onClick={() => setIsMuted(!isMuted)}
+				>
+					{
+						isMuted ? <IoMdVolumeOff /> : <IoMdVolumeHigh  />
+					}
+			</button>
       <div className="edgesEfect" />
       <div className="contentTopBar">
         <h1 className="logoIcon">

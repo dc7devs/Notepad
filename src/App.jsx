@@ -8,7 +8,6 @@ import NoteController from "./controllers/notes.controllers"
 
 import "./App.scss"
 import sample from "./assets/video.mp4"
-import { IoMdVolumeOff, IoMdVolumeHigh } from "react-icons/io"
 
 const noteController = new NoteController()
 
@@ -55,16 +54,11 @@ const App = () => {
 	return (
 		<>
 			<div className="container">
-				<button
-					className="muted"
-					onClick={() => setIsMuted(!isMuted)}
-				>
-					{
-						isMuted ? <IoMdVolumeOff /> : <IoMdVolumeHigh  />
-					}
-				</button>
+				
 				<TopBar
 					CreateData={handleCreateNote}
+					isMuted={isMuted}
+					setIsMuted={setIsMuted}
 				/>
 				<Notes
 					notes={notes}

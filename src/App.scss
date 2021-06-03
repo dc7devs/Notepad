@@ -18,17 +18,6 @@
         min-height: 100%;
         z-index: -999;
     }
-    .muted {
-        position: fixed;
-        top: 30px;
-        left: 20px;
-        background: none;
-        border: none;
-        color: #FEFEFEaf;
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 2;
-    }
 }
 // responsive
 @media (max-width: 768px) {
@@ -80,15 +69,12 @@
         .notion-container {
             max-height: auto;
         }
-        .muted {
-            left: 10px;
-            top: 138px;
-            color: #FEFEFEdf;
-        }
         .topBar {
-            // .edgesEfect {
-
-            // }
+            .muted {
+                left: 10px;
+                top: 120px;
+                color: #FEFEFEdf;
+            }
             div.contentTopBar {
                 h1.logoIcon {
                     font-size: 2.1rem;
