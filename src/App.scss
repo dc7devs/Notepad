@@ -59,7 +59,6 @@
                 margin-bottom: 20px;
             }
             .close {
-                z-index: 1;
                 bottom: 20px;
                 right: 10px;
                 color: #f1c888;
@@ -71,8 +70,9 @@
         }
         .topBar {
             .muted {
-                left: 10px;
-                top: 120px;
+                position: absolute;
+                left: 15px;
+                bottom: 0;
                 color: #FEFEFEdf;
             }
             div.contentTopBar {
