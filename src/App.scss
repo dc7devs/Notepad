@@ -41,6 +41,7 @@
                 display: none;
             }
             .papyruContent {
+                top: 20px;
                 background: radial-gradient(circle, #f1c888,#f1c888, #994815);
                 border-radius: 15px;
                 padding: 30px;
@@ -101,7 +102,6 @@
             }
         }
         .footerContainer {
-            // position: absolute;
             align-self: flex-end;
             bottom: 0;
             border-radius: 0;
