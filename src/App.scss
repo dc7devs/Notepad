@@ -23,7 +23,8 @@
 @media (max-width: 768px) {
     .container {
         margin: 0;
-        height: 100vh;
+        min-height: 100vh;
+        max-width: auto;
         border-radius: 16px 16px 0 0;
         .notion-container {
             margin-top: 20px;
@@ -45,7 +46,6 @@
                 overflow: auto;
 
                 width: 100vw;
-                min-height: auto;
                 height: auto;
                 max-height: 100vh;
 
@@ -72,7 +72,7 @@
             
         }
         .notion-container {
-            max-height: auto;
+           min-height: 100%;
         }
         .topBar {
             .muted {
@@ -100,7 +100,6 @@
             }
         }
         .footerContainer {
-            position: fixed;
             max-width: 700px;
             bottom: 0;
             border-radius: 0;
