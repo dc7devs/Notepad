@@ -22,20 +22,21 @@
 // responsive
 @media (max-width: 768px) {
     .container {
+        padding-top: 20px;
         margin: 0;
-        min-height: 100vh;
         max-width: auto;
         border-radius: 16px 16px 0 0;
         .notion-container {
-            margin-top: 20px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
-            min-height: 450px;
+            min-height: 430px;
             .note-box {
                 width: calc(100% - 10px);
                 height: 140px;
             }
         }
         .papyruWidow {
+            z-index: 1;
             .papyruImg {
                 display: none;
             }
@@ -73,7 +74,10 @@
         }
         .topBar {
             .muted {
-                display: none;
+                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+                position: absolute;
+                bottom: 0;
+                height: 100%;
             }
             div.contentTopBar {
                 h1.logoIcon {
@@ -97,7 +101,8 @@
             }
         }
         .footerContainer {
-            max-width: 700px;
+            // position: absolute;
+            align-self: flex-end;
             bottom: 0;
             border-radius: 0;
             a {
