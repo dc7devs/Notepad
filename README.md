@@ -19,7 +19,7 @@
 
 ## 📃 **About**
 
-<img width="20" align="center" src=".github/bg-book.png"> notepad - Baseado no jogo Genshin Impact mas especificamente na bibliotecária dos Cavaleiros de Favonius, além de sua elegância e charme, Lisa também é altamente educada. baseado nisso criei um bloco de notas que armazena as suas anotações no localStorage, podendo edita-las e salvar a qualquer momento.
+<img width="20" align="center" src=".github/bg-book.png"> notepad - Inspirado no jogo Genshin Impact mas especificamente na bibliotecária dos Cavaleiros de Favonius, além de sua elegância e charme, Lisa também é altamente educada. baseado nisso criei um bloco de notas que armazena as suas anotações no localStorage, podendo edita-las e salvar a qualquer momento.
 
 ---
 
