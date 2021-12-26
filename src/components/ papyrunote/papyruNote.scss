@@ -14,7 +14,7 @@
     .close {
         position: absolute;
         bottom: 90vh;
-        left: 95vw;
+        left: 95%;
         font-size: 2.2rem;
         
         color: #fff;
@@ -22,10 +22,33 @@
     .close:hover {
         color: #3A395F;
     }
+
+    textarea {
+        height: 90vh;
+    }
+    .tox.tox-tinymce {
+        width: calc(100vw - 15%);
+        resize: none;
+    }
     button {
         bottom: 0;
         border: none;
         background: none;
         cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    .papyruWidow {
+        .close {
+            color: #3A395F;
+            left: 93%;
+        }
+        textarea {
+            height: 100vh;
+        }
+        .tox.tox-tinymce {
+            width: 100vw;
+        }
     }
 }

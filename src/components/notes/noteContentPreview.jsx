@@ -61,7 +61,7 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
                 <div
                     className="lastEditionTimeBox"
                 >
-                    <p className="lastEditionTime">{format(new Date(noteContent.dateEdition), "dd/MM/yyyy 'ás' HH:mm")}</p>
+                    <p className="lastEditionTime">{format(new Date(noteContent.dateEdition), "dd/MM/yyyy 'ás' HH:mm:ss")}</p>
                 </div>
             </div>
         </div>

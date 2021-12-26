@@ -18,9 +18,9 @@ const PapyruNote = ({ CreateData, content, closePapyru, UpdateData }) => {
             return;
         }
 
-        if(content.id !== content.id) {
+        if(content.dateEdition) {
             update();
-            
+            closePapyru();
         } else {
             CreateData({
                 contentText
@@ -49,10 +49,8 @@ const PapyruNote = ({ CreateData, content, closePapyru, UpdateData }) => {
                 initialValue={contentText}
                 onBlur={() => autoSave()}
                 init={{
-                  height: 450,
-                  min_height: 200,
-                  menubar: true,
                   resize: false,
+                  menubar: true,
                   plugins: [
                     'advlist autolink lists link image charmap print preview anchor',
                     'searchreplace visualblocks code fullscreen',

@@ -38,39 +38,17 @@
         }
         .papyruWidow {
             z-index: 1;
-            // .papyruContent {
-            //     top: 20px;
-            //     background: radial-gradient(circle, #f1c888,#f1c888, #994815);
-            //     border-radius: 15px;
-            //     padding: 30px;
-            //     overflow: auto;
-
-            //     width: 100vw;
-            //     height: auto;
-            //     max-height: 95vh;
-
-            //     code.text  {
-            //         min-height: 38px;
-            //     }
-            //     code.text[contentEditable]{
-            //         max-height: 350px;
-            //     }
-
-            //     .controls {
-            //         margin: 10px 0;
-            //     }
-            // }
             .pageNumber {
                 display: static;
                 margin-left: 20px;
                 margin-bottom: 20px;
             }
-            // .close {
-            //     z-index: 1;
-            //     font-size: 2rem;
-            //     // bottom: 10px;
-            //     // right: 0;
-            // }
+            .close {
+                z-index: 1;
+                font-size: 2rem;
+                top: 90vh;
+                right: 90vw;
+            }
             
         }
         .topBar {
