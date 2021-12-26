@@ -59,7 +59,7 @@ $ yarn start
 
 - ou click no lik do deploy
 
-[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-ctr5yurbw-diego-devss.vercel.app/)
+[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-lime.vercel.app/)
 
 
 
