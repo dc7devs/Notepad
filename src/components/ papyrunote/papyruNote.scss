@@ -2,97 +2,30 @@
     height: 100vh;
     width: 100vw;
     position: fixed;
-    justify-content: center;
+
     background-color: #1715159f;
+
     top: 0;
     left: 0;
+
     display: flex;
     align-items: center;
+    justify-content: center;
     .close {
-        position: fixed;
-        font-size: 2.5rem;
-        right: 50px;
+        position: absolute;
+        bottom: 90vh;
+        left: 95vw;
+        font-size: 2.2rem;
         
-        color: #f1c888;
+        color: #fff;
     }
     .close:hover {
-        color: #280300;
+        color: #3A395F;
     }
     button {
         bottom: 0;
         border: none;
         background: none;
-        color: #280300;
         cursor: pointer;
-    }
-    .papyruContent {
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-
-        width: 70vh;
-        min-height: 90vh;
-
-        padding: 20vh 50px 15vh 50px;
-        background-image: url("../../assets/th.png");
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-
-        height: auto;
-        max-height: 95vh;
-        .controls {
-            align-self: flex-end;
-            width: 100px;
-            display: flex;
-            justify-content: space-around;
-            .save {
-                font-size: 1.5rem;            
-            }
-            .edit {
-                font-size: 1.5rem;
-            }
-        }
-        h1.title {
-            max-width: 100%;
-            word-wrap: break-word;
-            font-size: 1.5rem;
-            align-self: flex-start;
-            color: #280300;
-            background-color: #2803001f;
-            padding: 0 10px;
-        }
-        h1.title[contenteditable] {
-            width: 100%;
-            border: 0;
-            box-shadow: 0 0 0 0;
-            outline: none;
-        }
-        code.text {
-            max-width: 100%;
-            word-wrap: break-word;
-            color: #84360d;
-            background-color: #2803001f;
-            overflow: auto;
-            text-align: justify;
-            padding: 10px 15px;
-            border-radius: 0 0 15px 15px;
-            font-size: 1.2rem;
-            align-self: flex-start;
-        }
-        code.text[contentEditable]{
-            width: 100%;
-            border: 0;
-            box-shadow: 0 0 0 0;
-            outline: none;
-        }
-        .pageNumber {
-            position: absolute;
-            bottom: -10px;
-            left: -10px;
-            align-self: flex-start;
-            right: 0;
-            font-size: 20px;
-        }
     }
 }

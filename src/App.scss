@@ -24,8 +24,9 @@
     .container {
         padding-top: 20px;
         margin: 0;
-        max-width: auto;
-        border-radius: 16px 16px 0 0;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
         .notion-container {
             margin-bottom: 10px;
             flex-wrap: wrap;
@@ -37,48 +38,44 @@
         }
         .papyruWidow {
             z-index: 1;
-            .papyruContent {
-                top: 20px;
-                background: radial-gradient(circle, #f1c888,#f1c888, #994815);
-                border-radius: 15px;
-                padding: 30px;
-                overflow: auto;
+            // .papyruContent {
+            //     top: 20px;
+            //     background: radial-gradient(circle, #f1c888,#f1c888, #994815);
+            //     border-radius: 15px;
+            //     padding: 30px;
+            //     overflow: auto;
 
-                width: 100vw;
-                height: auto;
-                max-height: 95vh;
+            //     width: 100vw;
+            //     height: auto;
+            //     max-height: 95vh;
 
-                code.text  {
-                    min-height: 38px;
-                }
-                code.text[contentEditable]{
-                    max-height: 350px;
-                }
+            //     code.text  {
+            //         min-height: 38px;
+            //     }
+            //     code.text[contentEditable]{
+            //         max-height: 350px;
+            //     }
 
-                .controls {
-                    margin: 10px 0;
-                }
-            }
+            //     .controls {
+            //         margin: 10px 0;
+            //     }
+            // }
             .pageNumber {
                 display: static;
                 margin-left: 20px;
                 margin-bottom: 20px;
             }
-            .close {
-                z-index: 1;
-                font-size: 2rem;
-                bottom: 10px;
-                right: 0;
-                color: #994815;
-            }
+            // .close {
+            //     z-index: 1;
+            //     font-size: 2rem;
+            //     // bottom: 10px;
+            //     // right: 0;
+            // }
             
         }
         .topBar {
             .muted {
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                position: absolute;
-                bottom: 0;
-                height: 100%;
+                display: none;
             }
             div.contentTopBar {
                 h1.logoIcon {

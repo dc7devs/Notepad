@@ -16,6 +16,14 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
     const remove = () => {
         RemoveData(noteContent)
     }
+
+    var parser = new DOMParser();
+    var htmlDoc = parser.parseFromString(noteContent.contentText, "text/html");
+
+
+    // console.log(noteContent);
+    // console.log(htmlDoc.querySelector("body > h1"));
+
     return (
         <div
             className="note-box"
@@ -23,25 +31,26 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
             <div
                 className="titlePreview"
             >
-                <p
-                    onClick={open}
-                >
-                    {noteContent.inputTitle}
+                <p>
+                    Mapas com React usando Leaflet
+                    {/* {htmlDoc.querySelector("body > h2").innerHTML} */}
                 </p>
                 <button
-                    className="trash"
-                    onClick={remove}
-                >
+                    className="trash"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                    onClick={remove}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                >                                                       
                     <HiTrash />
                 </button>
             </div>
 
-            <div className="textPreviewLastEditionTimeBox">
+            <div
+                className="textPreviewLastEditionTimeBox"
+                onClick={open}
+            >
                 <code
                     className="textPreview"
-                    onClick={open}
                 >
-                    {noteContent.inputText}
+                    {htmlDoc.querySelector("body > p").innerHTML}
                 </code>
 
                 <div

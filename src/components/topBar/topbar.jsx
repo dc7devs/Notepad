@@ -1,26 +1,30 @@
-  import React, { useState } from "react";
+import React, { useState, useRef } from "react"
+import { Editor } from "@tinymce/tinymce-react"
 
-import { FaPlusCircle, } from 'react-icons/fa';
 import { GiSecretBook } from 'react-icons/gi';
-import { IoMdVolumeOff, IoMdVolumeHigh } from "react-icons/io"
+import { IoMdVolumeOff, IoMdVolumeHigh } from 'react-icons/io'
 
 import "./topbar.scss";
 
-const TopBar = ({ CreateData, isMuted, setIsMuted}) => {
-  const [inputTitle, setInputTitle] = useState('');
-  const [inputText, setInputText] = useState('');
+import iconAdventurer from "../../assets/Icon_Adventurer_Handbook.png"
+
+const TopBar = ({ CreateData, isMuted, setIsMuted }) => {
+  const editorRef = useRef(null);
+
+  const [contentText, setContentText] = useState('');
 
   const handleSubmit = () => {
-    if (inputTitle || inputText) {
-      setInputTitle('')
-      setInputText('')
-    } else if (!inputTitle && !inputText) {
+    // console.log(editorRef.current.getContent())
+
+    if (contentText) {
+      setContentText('')
+      
+    } else if (!contentText) {
       return;
     }
 
     CreateData({
-      inputTitle,
-      inputText
+      contentText
     })
   }
 
@@ -40,27 +44,27 @@ const TopBar = ({ CreateData, isMuted, setIsMuted}) => {
           <GiSecretBook />
         </h1>
         <div className="boxSubmit">
-          <input
-            className="titleArea"
-            type="text"
-            placeholder="Título"
-            value={inputTitle}
-            autoFocus
-            onChange={e => setInputTitle(e.target.value)}
-          />
-          <textarea
-            className="textArea"
-            type="text"
-            value={inputText}
-            onChange={e => setInputText(e.target.value)}
-            placeholder="texto"
-          />
+          {/* <textarea
+            onChange={e => setContentText(e.target.value)}
+          ></textarea> */}
+        {/* <Editor
+              Key='gxp84k8sngseey44nqheo7rh8ih5ssi16cfk1x601a83rihc'
+              onInit={(evt, editor) => editorRef.current = editor}
+              initialValue={contentText}
+              onChange={e => setContentText(e.target.value)}
+              init={{
+                height: 150,
+                menubar: true,
+                resize: false
+              }}
+          /> */}
 
           <button
             className="btn-addPlus"
             onClick={handleSubmit}
           >
-            <FaPlusCircle />
+            <p>NOVA NOTA</p>
+            <img src={iconAdventurer} alt="Icon_Adventurer_Handbook.png" />
           </button>
         </div>
       </div>

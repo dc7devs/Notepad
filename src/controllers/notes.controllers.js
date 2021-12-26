@@ -37,8 +37,7 @@ export default class NoteController {
         
         for(let i in notes) {
             if(notes[i].id === idNote) {
-                notes[i].inputTitle = updateNote.title
-                notes[i].inputText = updateNote.text
+                notes[i].contentText = updateNote.contentText
             }
         }
         // console.log(notes)

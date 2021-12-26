@@ -54,11 +54,11 @@ const App = () => {
 	return (
 		<>
 			<div className="container">
-				
 				<TopBar
 					CreateData={handleCreateNote}
 					isMuted={isMuted}
 					setIsMuted={setIsMuted}
+					// newPapyru={openPapyru}
 				/>
 				<Notes
 					notes={notes}

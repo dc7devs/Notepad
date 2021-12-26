@@ -1,70 +1,68 @@
-import React, { useState } from "react"
+import React, { useState, useRef } from "react"
+import { Editor } from "@tinymce/tinymce-react" 
 
 import { RiCloseCircleLine } from "react-icons/ri"
-import { FiEdit } from "react-icons/fi"
-import { FaSave } from "react-icons/fa"
 
 import "./papyruNote.scss"
 
 const PapyruNote = ({ content, closePapyru, UpdateData }) => {
+    const editorRef = useRef(null)
+    // const log = () => {
+    //     if(editorRef.current) {
+    //         console.log(editorRef.current.getContent());
+    //     }
+    // };
     function close () {
-        closePapyru()
+        closePapyru();
+        update();
     }
-    function toEdit() {
-        let titleTag = document.querySelector(".title")
-        let textTag = document.querySelector(".text")
-        if(titleTag.hasAttribute("contentEditable") === false && titleTag.hasAttribute("contentEditable") === false) {
-            titleTag.setAttribute("contentEditable","")
-            textTag.setAttribute("contentEditable","")
-        }
-    }
-    const [title, setTitle] = useState(content.inputTitle);
-    const [text, setText] = useState(content.inputText);
 
-    console.log(title)
-    console.log(text)
+    // const [title, setTitle] = useState(content.inputTitle);
+    const [contentText, setContentText] = useState(content.contentText)
 
     let id = content.id
     function update() {
         UpdateData({
-            title,
-            text,
+            // title,
+            contentText,
             id
         })
     }
-    function handleSave() {
-        update()
-        close()
-    }
+    // function handleSave() {
+    //     update()
+    //     // close()
+    // }
 
     return (
         <div className="papyruWidow">
+            <Editor
+                apiKey='gxp84k8sngseey44nqheo7rh8ih5ssi16cfk1x601a83rihc'
+                onInit={(evt, editor) => editorRef.current = editor}
+                initialValue={contentText}
+                onBlur={() => setContentText(editorRef.current.getContent())}
+                init={{
+                  height: 450,
+                  min_height: 200,
+                  menubar: true,
+                  resize: false,
+                  plugins: [
+                    'advlist autolink lists link image charmap print preview anchor',
+                    'searchreplace visualblocks code fullscreen',
+                    'insertdatetime media table paste code help wordcount'
+                  ],
+                  toolbar: 'undo redo | formatselect | ' +
+                  'bold italic backcolor | alignleft aligncenter ' +
+                  'alignright alignjustify | bullist numlist outdent indent | ' +
+                  'removeformat | help',
+                  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }'
+                }}
+            />
             <button
                 className="close"
                 onClick={close}
             >
                 <RiCloseCircleLine />
             </button>
-
-            <div className="papyruContent">
-                <div className="controls">
-                    <button className="edit" onClick={toEdit}>
-                        <FiEdit />
-                    </button>
-                    <button className="save" onClick={handleSave}>
-                        <FaSave />
-                    </button>
-                </div>
-                <h1 className="title" onInput={(e)=> setTitle(e.target.innerText)}>{content.inputTitle}</h1>
-
-                <code className="text" onInput={(e) => setText(e.target.innerText)}>{content.inputText}</code>
-
-                {/* <code></code> */}
-
-                <small className="pageNumber">
-                    {content.id}
-                </small>
-            </div>
         </div>
     )
 }
