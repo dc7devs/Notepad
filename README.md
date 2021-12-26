@@ -5,8 +5,6 @@
 
 <h1 align="center">Lisa`s Notes</h1>
 
-<img src="./.github/lisa.png" alt="Lisa">
-
 ---
 
 <p align="center">
