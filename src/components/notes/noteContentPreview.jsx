@@ -22,7 +22,7 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
 
 
     // console.log(noteContent);
-    // console.log(htmlDoc.querySelector("body > h1"));
+    console.log(htmlDoc.querySelector("body > h1"));
 
     return (
         <div
@@ -32,11 +32,13 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
                 className="titlePreview"
             >
                 <p>
-                    Mapas com React usando Leaflet
-                    {/* {htmlDoc.querySelector("body > h2").innerHTML} */}
+                    {
+                        htmlDoc.querySelector("body > h1") != undefined || htmlDoc.querySelector("body > h1") != null ?
+                        htmlDoc.querySelector("body > h1").innerText : "🏷"
+                    }
                 </p>
                 <button
-                    className="trash"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+                    className="trash"
                     onClick={remove}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
                 >                                                       
                     <HiTrash />
@@ -50,7 +52,10 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
                 <code
                     className="textPreview"
                 >
-                    {htmlDoc.querySelector("body > p").innerHTML}
+                    {
+                        htmlDoc.querySelector("body > p") != undefined || htmlDoc.querySelector("body > p") != null ?
+                        htmlDoc.querySelector("body > p").innerText : "📝..."
+                    }
                 </code>
 
                 <div

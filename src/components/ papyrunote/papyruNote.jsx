@@ -5,33 +5,41 @@ import { RiCloseCircleLine } from "react-icons/ri"
 
 import "./papyruNote.scss"
 
-const PapyruNote = ({ content, closePapyru, UpdateData }) => {
-    const editorRef = useRef(null)
-    // const log = () => {
-    //     if(editorRef.current) {
-    //         console.log(editorRef.current.getContent());
-    //     }
-    // };
-    function close () {
-        closePapyru();
-        update();
-    }
+const PapyruNote = ({ CreateData, content, closePapyru, UpdateData }) => {
 
-    // const [title, setTitle] = useState(content.inputTitle);
     const [contentText, setContentText] = useState(content.contentText)
+    
+    const editorRef = useRef(null)
+
+    function close () {
+        update();
+        if (!contentText) {
+            closePapyru();
+            return;
+        }
+
+        if(content.id !== content.id) {
+            update();
+            
+        } else {
+            CreateData({
+                contentText
+            })
+            closePapyru();
+        }
+    }
 
     let id = content.id
     function update() {
         UpdateData({
-            // title,
             contentText,
             id
         })
     }
-    // function handleSave() {
-    //     update()
-    //     // close()
-    // }
+    function autoSave() {
+        update();
+        setContentText(editorRef.current.getContent());
+    }
 
     return (
         <div className="papyruWidow">
@@ -39,7 +47,7 @@ const PapyruNote = ({ content, closePapyru, UpdateData }) => {
                 apiKey='gxp84k8sngseey44nqheo7rh8ih5ssi16cfk1x601a83rihc'
                 onInit={(evt, editor) => editorRef.current = editor}
                 initialValue={contentText}
-                onBlur={() => setContentText(editorRef.current.getContent())}
+                onBlur={() => autoSave()}
                 init={{
                   height: 450,
                   min_height: 200,
