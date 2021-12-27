@@ -39,6 +39,8 @@
 
 @media (max-width: 768px) {
     .papyruWidow {
+        height: auto;
+        position: fixed;
         .close {
             color: #3A395F;
             align-self: flex-end;

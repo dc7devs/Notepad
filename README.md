@@ -5,8 +5,6 @@
 
 <h1 align="center">Lisa`s Notes</h1>
 
-<img src="./.github/lisa.png" alt="Lisa">
-
 ---
 
 <p align="center">
@@ -60,7 +58,7 @@ $ yarn start
 
 - ou click no lik do deploy
 
-[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-33z12ksd0-diego-devss.vercel.app/)
+[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-ctr5yurbw-diego-devss.vercel.app/)
 
 
 
