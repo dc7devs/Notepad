@@ -1,7 +1,8 @@
 import React, { useState, useRef } from "react"
 import { Editor } from "@tinymce/tinymce-react" 
 
-import { RiCloseCircleLine } from "react-icons/ri"
+// import { RiCloseCircleLine } from "react-icons/ri"
+import { MdSave } from "react-icons/md"
 
 import "./papyruNote.scss"
 
@@ -11,7 +12,7 @@ const PapyruNote = ({ CreateData, content, closePapyru, UpdateData }) => {
     
     const editorRef = useRef(null)
 
-    function close () {
+    function closeSave () {
         update();
         if (!contentText) {
             closePapyru();
@@ -65,9 +66,10 @@ const PapyruNote = ({ CreateData, content, closePapyru, UpdateData }) => {
             />
             <button
                 className="close"
-                onClick={close}
+                onClick={closeSave}
             >
-                <RiCloseCircleLine />
+                <MdSave /> 
+                {/* <RiCloseCircleLine /> */}
             </button>
         </div>
     )

@@ -12,15 +12,14 @@
     align-items: center;
     justify-content: center;
     .close {
-        position: absolute;
-        bottom: 90vh;
-        left: 95%;
-        font-size: 2.2rem;
-        
-        color: #fff;
-    }
-    .close:hover {
-        color: #3A395F;
+        z-index: 1;
+        align-self: flex-start;
+
+        font-size: 1.6rem;
+        color: #252525;
+
+        margin-left: -40px;
+        margin-top: 37px;
     }
 
     textarea {
@@ -42,7 +41,8 @@
     .papyruWidow {
         .close {
             color: #3A395F;
-            left: 93%;
+            align-self: flex-end;
+            margin-bottom: 30px;
         }
         textarea {
             height: 100vh;

@@ -20,10 +20,6 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
     var parser = new DOMParser();
     var htmlDoc = parser.parseFromString(noteContent.contentText, "text/html");
 
-
-    // console.log(noteContent);
-    console.log(htmlDoc.querySelector("body > h1"));
-
     return (
         <div
             className="note-box"
