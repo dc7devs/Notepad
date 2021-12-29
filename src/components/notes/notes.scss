@@ -1,6 +1,7 @@
 ::-webkit-scrollbar {
     width: 1px;
 }
+
 .toggerBackground {
     background-image: url("../../assets/bg-book.png");
     background-position: center;
@@ -11,12 +12,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    min-height: 340px;
-    padding: 2px;
-    max-height: 67vh;
-    overflow: auto;
 
+    width: 100%;
+
+    height: calc(100vh - 230px);
+
+    overflow: auto;
+    
+    padding: 2px;
     .note-box{
         position: relative;
         height: 140px;
@@ -33,7 +36,6 @@
             background-color: #28143B;
             color: #fff;
             align-items: center;
-            cursor: pointer;
             p {
                 width: 100%;
                 font-weight: 500;
@@ -46,11 +48,11 @@
             }
             button.trash {
                 background-color: transparent;
+                cursor: pointer;
                 border: none;
                 color: #fff;
                 font-size: 1.1rem;
-                cursor: pointer;
-                margin: 10px 5px 5px 0;
+                padding: 10px 5px 5px 0;
             }
         }
         .textPreviewLastEditionTimeBox {
@@ -58,7 +60,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-
+            cursor: pointer;
             code.textPreview {
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
@@ -69,7 +71,6 @@
                 font-size: 1.05rem;
                 margin-bottom: 5px;
                 padding: 5px 5px 0 10px;
-                cursor: pointer;
             }
     
             .lastEditionTimeBox {

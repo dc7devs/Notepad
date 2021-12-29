@@ -5,8 +5,6 @@
 
 <h1 align="center">Lisa`s Notes</h1>
 
-<img src="./.github/lisa.png" alt="Lisa">
-
 ---
 
 <p align="center">
@@ -25,7 +23,7 @@
 
 ## 🧩 **Layout**
 
-<img src=".github/layout.png" width="1000">
+<img src=".github/video2.gif" width="1000">
 
 ---
 
@@ -37,6 +35,7 @@
     - [**React-icons v1.33.0**](https://react-icons.github.io/react-icons)
 - [**CSS**](https://www.w3schools.com/css/)
     - [**Sass v1.33.0**](https://sass-lang.com/)
+- [**TinyMCE**](https://www.tiny.cloud/)
 
 ---
 
@@ -59,7 +58,7 @@ $ yarn start
 
 - ou click no lik do deploy
 
-[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-lime.vercel.app/)
+[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-ctr5yurbw-diego-devss.vercel.app/)
 
 
 

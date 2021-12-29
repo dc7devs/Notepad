@@ -1,6 +1,8 @@
 .container {
     max-width: 700px;
-    min-height: 400px;
+
+    max-height: calc(100vh - 60px);
+
     margin: 30px auto;
     overflow: none;
     
@@ -19,46 +21,58 @@
         z-index: -999;
     }
 }
-// responsive
+
 @media (max-width: 768px) {
-    .container {
-        padding-top: 20px;
+    .container, body {
         margin: 0;
-        max-width: auto;
-        border-radius: 16px 16px 0 0;
-        .notion-container {
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-            min-height: 430px;
-            .note-box {
-                width: calc(100% - 10px);
-                height: 140px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .container {
+        width: 100vw;
+        max-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        padding-top: 20px;
+
+        border-radius: 0;
+        nav.topBar {
+            margin: 0;
+            .muted {
+                display: none;
+            }
+            div.contentTopBar {
+                h1.logoIcon {
+                    font-size: 2.1rem;
+                    margin: 0;
+                }
             }
         }
+
+        main.notion-container {
+            min-height: calc(100vh - 155px);
+            flex-grow: 3;
+            margin: 10px 0;
+            flex-wrap: wrap;
+            .note-box {
+                width: calc(100% - 10px);
+            }
+        }
+
+        footer.footerContainer {
+            bottom: 0;
+            border-radius: 0;
+            a {
+                font-size: 1.3rem;
+            }
+        }
+
         .papyruWidow {
             z-index: 1;
-            .papyruContent {
-                top: 20px;
-                background: radial-gradient(circle, #f1c888,#f1c888, #994815);
-                border-radius: 15px;
-                padding: 30px;
-                overflow: auto;
-
-                width: 100vw;
-                height: auto;
-                max-height: 95vh;
-
-                code.text  {
-                    min-height: 38px;
-                }
-                code.text[contentEditable]{
-                    max-height: 350px;
-                }
-
-                .controls {
-                    margin: 10px 0;
-                }
-            }
             .pageNumber {
                 display: static;
                 margin-left: 20px;
@@ -67,46 +81,8 @@
             .close {
                 z-index: 1;
                 font-size: 2rem;
-                bottom: 10px;
-                right: 0;
-                color: #994815;
-            }
-            
-        }
-        .topBar {
-            .muted {
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-                position: absolute;
-                bottom: 0;
-                height: 100%;
-            }
-            div.contentTopBar {
-                h1.logoIcon {
-                    font-size: 2.1rem;
-                    margin: 0;
-                }
-                div.boxSubmit {
-                    padding: 0 10px;
-                    input.titleArea {
-                        font-size: 1.4rem;
-                    }
-                    textarea.textArea {
-                        font-size: 1.2rem;
-                        padding-right: 35px
-                    }
-                    button.btn-addPlus {
-                        font-size: 1.5rem;
-                        margin-left: -30px;
-                    }
-                }
-            }
-        }
-        .footerContainer {
-            align-self: flex-end;
-            bottom: 0;
-            border-radius: 0;
-            a {
-                font-size: 1.3rem;
+                top: 90vh;
+                right: 90vw;
             }
         }
     }

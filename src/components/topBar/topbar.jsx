@@ -1,27 +1,16 @@
-  import React, { useState } from "react";
+import React, { useState } from "react"
 
-import { FaPlusCircle, } from 'react-icons/fa';
 import { GiSecretBook } from 'react-icons/gi';
-import { IoMdVolumeOff, IoMdVolumeHigh } from "react-icons/io"
+import { IoMdVolumeOff, IoMdVolumeHigh } from 'react-icons/io'
 
 import "./topbar.scss";
 
-const TopBar = ({ CreateData, isMuted, setIsMuted}) => {
-  const [inputTitle, setInputTitle] = useState('');
-  const [inputText, setInputText] = useState('');
+import iconAdventurer from "../../assets/Icon_Adventurer_Handbook.png"
 
-  const handleSubmit = () => {
-    if (inputTitle || inputText) {
-      setInputTitle('')
-      setInputText('')
-    } else if (!inputTitle && !inputText) {
-      return;
-    }
+const TopBar = ({ isMuted, setIsMuted, openPapyru }) => {
 
-    CreateData({
-      inputTitle,
-      inputText
-    })
+  function open(){
+    openPapyru('');
   }
 
   return (
@@ -40,27 +29,13 @@ const TopBar = ({ CreateData, isMuted, setIsMuted}) => {
           <GiSecretBook />
         </h1>
         <div className="boxSubmit">
-          <input
-            className="titleArea"
-            type="text"
-            placeholder="Título"
-            value={inputTitle}
-            autoFocus
-            onChange={e => setInputTitle(e.target.value)}
-          />
-          <textarea
-            className="textArea"
-            type="text"
-            value={inputText}
-            onChange={e => setInputText(e.target.value)}
-            placeholder="texto"
-          />
 
           <button
             className="btn-addPlus"
-            onClick={handleSubmit}
+            onClick={open}
           >
-            <FaPlusCircle />
+            <p>NOVA NOTA</p>
+            <img src={iconAdventurer} alt="Icon_Adventurer_Handbook.png" />
           </button>
         </div>
       </div>

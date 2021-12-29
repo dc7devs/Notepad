@@ -16,6 +16,10 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
     const remove = () => {
         RemoveData(noteContent)
     }
+
+    var parser = new DOMParser();
+    var htmlDoc = parser.parseFromString(noteContent.contentText, "text/html");
+
     return (
         <div
             className="note-box"
@@ -23,31 +27,37 @@ const NoteContentPreview = ({ noteContent, RemoveData, openPapyru}) => {
             <div
                 className="titlePreview"
             >
-                <p
-                    onClick={open}
-                >
-                    {noteContent.inputTitle}
+                <p>
+                    {
+                        htmlDoc.querySelector("body > h1") != undefined || htmlDoc.querySelector("body > h1") != null ?
+                        htmlDoc.querySelector("body > h1").innerText : "🏷"
+                    }
                 </p>
                 <button
                     className="trash"
-                    onClick={remove}
-                >
+                    onClick={remove}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                >                                                       
                     <HiTrash />
                 </button>
             </div>
 
-            <div className="textPreviewLastEditionTimeBox">
+            <div
+                className="textPreviewLastEditionTimeBox"
+                onClick={open}
+            >
                 <code
                     className="textPreview"
-                    onClick={open}
                 >
-                    {noteContent.inputText}
+                    {
+                        htmlDoc.querySelector("body > p") != undefined || htmlDoc.querySelector("body > p") != null ?
+                        htmlDoc.querySelector("body > p").innerText : "📝..."
+                    }
                 </code>
 
                 <div
                     className="lastEditionTimeBox"
                 >
-                    <p className="lastEditionTime">{format(new Date(noteContent.dateEdition), "dd/MM/yyyy 'ás' HH:mm")}</p>
+                    <p className="lastEditionTime">{format(new Date(noteContent.dateEdition), "dd/MM/yyyy 'ás' HH:mm:ss")}</p>
                 </div>
             </div>
         </div>
