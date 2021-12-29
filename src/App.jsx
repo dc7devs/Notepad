@@ -19,7 +19,6 @@ const App = () => {
 	const [isPapyru, setIsPapyru] = useState(false)
 	const [content, setContent] = useState([])
 
-	
 	function openPapyru(content) {
 		setIsPapyru(true)
 		setContent(content)

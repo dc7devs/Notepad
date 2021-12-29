@@ -1,6 +1,8 @@
 .container {
     max-width: 700px;
-    min-height: 400px;
+
+    max-height: calc(100vh - 60px);
+
     margin: 30px auto;
     overflow: none;
     
@@ -19,30 +21,56 @@
         z-index: -999;
     }
 }
-// responsive
+
 @media (max-width: 768px) {
+    .container, body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
     .container {
+        width: 100vw;
+        max-height: 100vh;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
         padding-top: 20px;
-        margin: 0;
-
-        width: 100vw;
-        height: 100vh;
 
         border-radius: 0;
-        .notion-container {
-            flex-grow: 3;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-            height: 100%;
-            .note-box {
-                width: calc(100% - 10px);
-                height: 140px;
+        nav.topBar {
+            margin: 0;
+            .muted {
+                display: none;
+            }
+            div.contentTopBar {
+                h1.logoIcon {
+                    font-size: 2.1rem;
+                    margin: 0;
+                }
             }
         }
+
+        main.notion-container {
+            min-height: calc(100vh - 155px);
+            flex-grow: 3;
+            margin: 10px 0;
+            flex-wrap: wrap;
+            .note-box {
+                width: calc(100% - 10px);
+            }
+        }
+
+        footer.footerContainer {
+            bottom: 0;
+            border-radius: 0;
+            a {
+                font-size: 1.3rem;
+            }
+        }
+
         .papyruWidow {
             z-index: 1;
             .pageNumber {
@@ -55,26 +83,6 @@
                 font-size: 2rem;
                 top: 90vh;
                 right: 90vw;
-            }
-            
-        }
-        .topBar {
-            margin: 0;
-            .muted {
-                display: none;
-            }
-            div.contentTopBar {
-                h1.logoIcon {
-                    font-size: 2.1rem;
-                    margin: 0;
-                }
-            }
-        }
-        .footerContainer {
-            bottom: 0;
-            border-radius: 0;
-            a {
-                font-size: 1.3rem;
             }
         }
     }

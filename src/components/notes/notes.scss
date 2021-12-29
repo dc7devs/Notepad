@@ -1,6 +1,7 @@
 ::-webkit-scrollbar {
     width: 1px;
 }
+
 .toggerBackground {
     background-image: url("../../assets/bg-book.png");
     background-position: center;
@@ -11,12 +12,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    min-height: 340px;
-    padding: 2px;
-    max-height: 67vh;
-    overflow: auto;
 
+    width: 100%;
+
+    height: calc(100vh - 230px);
+
+    overflow: auto;
+    
+    padding: 2px;
     .note-box{
         position: relative;
         height: 140px;
