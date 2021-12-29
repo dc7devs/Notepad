@@ -5,8 +5,6 @@
 
 <h1 align="center">Lisa`s Notes</h1>
 
----
-
 <p align="center">
   <a href="#-About">Sobre</a>&nbsp;✦&nbsp;
   <a href="#-Layout">Layout</a>&nbsp;✦&nbsp;
@@ -15,9 +13,11 @@
   <a href="#-License">License</a>
 </p>
 
-## 📃 **About**
 
-<img width="20" align="center" src=".github/bg-book.png"> notepad - Inspirado no jogo Genshin Impact mas especificamente na bibliotecária dos Cavaleiros de Favonius, além de sua elegância e charme, Lisa também é altamente educada. baseado nisso criei um bloco de notas que armazena as suas anotações no localStorage, podendo edita-las e salvar a qualquer momento.
+<img align="right" width="250" src="./.github/lisa.png" alt="Lisa">
+Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bibliotecária Lisa dos Cavaleiros de Favonius, ele permite criar ou alterar textos, que por sua vez são armazenados no localStorage do navegador.
+
+<br><br><br><br><br><br>
 
 ---
 
