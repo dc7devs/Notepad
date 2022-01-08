@@ -29,6 +29,7 @@ Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bi
 
 ## ⚙ **Tecnologias**
 
+- [**HTML**](https://www.w3schools.com/html/html_intro.asp)
 - [**javaScript**](https://www.w3schools.com/js/)
     - [**date-fns v2.22.1**](https://date-fns.org/)
     - [**Reactjs v17.0.2**](https://reactjs.org/)
@@ -58,7 +59,7 @@ $ yarn start
 
 - ou click no lik do deploy
 
-[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-ctr5yurbw-diego-devss.vercel.app/)
+[![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-diego-devss.vercel.app/)
 
 
 
