@@ -41,7 +41,7 @@ Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bi
 ---
 
 ## 📔 **Teste o Projeto**
-- clone o repositorio obs: para execultar o prjeto e preciso ter o [nodejs](https://nodejs.org/en/) e o [yarn](https://classic.yarnpkg.com/en/)
+- clone o repositorio obs: para execultar o projeto e preciso ter o [nodejs](https://nodejs.org/en/) e o [yarn](https://classic.yarnpkg.com/en/)
 ```
 # Para clonar esse repositorio:
 $ git clone https://github.com/Diego-DevsS/notePad
