@@ -19,13 +19,11 @@ Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bi
 
 <br><br><br><br><br><br>
 
----
 
 ## 🧩 **Layout**
 
 <img src=".github/video2.gif" width="1000">
 
----
 
 ## ⚙ **Tecnologias**
 
@@ -38,7 +36,6 @@ Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bi
     - [**Sass v1.33.0**](https://sass-lang.com/)
 - [**TinyMCE**](https://www.tiny.cloud/)
 
----
 
 ## 📔 **Teste o Projeto**
 - clone o repositorio obs: para execultar o projeto e preciso ter o [nodejs](https://nodejs.org/en/) e o [yarn](https://classic.yarnpkg.com/en/)
@@ -66,5 +63,3 @@ $ yarn start
 ## 📝 **License**
 
 - [**Licence**](https://github.com/Diego-DevsS/notePad/blob/main/LICENSE)
-
----
