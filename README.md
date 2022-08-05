@@ -22,7 +22,7 @@ Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bi
 
 ## 🧩 **Layout**
 
-<img src=".github/video2.gif" width="1000">
+<img src=".github/video2.gif">
 
 
 ## ⚙ **Tecnologias**
