@@ -1,0 +1,45 @@
+.modalWidow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #1715159f;
+
+    display: flex;
+    justify-content: center;
+    .navBarEditor {
+        display: none;
+    }
+    .tox.tox-tinymce {
+        height: 500px;
+        width: calc(100vw - 15%);
+        margin-top: 5%;
+        resize: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .modalWidow {
+        position: fixed;
+        background: #FFF;
+        
+        justify-content: flex-start;
+        flex-direction: column;
+        .navBarEditor {
+            display: flex;
+            height: 50px;
+            background-color: #431864;
+            .saveButton {
+                width: 100%;
+                background: transparent;
+                font-size: 20px;
+            }
+        }
+        .tox.tox-tinymce {
+            margin: 0;
+            width: 100vw;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+::-webkit-scrollbar {
+    width: 1px;
+}
+
+.toggerBackground {
+    background-image: url("../../assets/bg-book.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.notion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    width: 100%;
+
+    height: calc(100vh - 230px);
+
+    overflow: auto;
+    
+    padding: 2px;
+}

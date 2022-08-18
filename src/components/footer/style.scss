@@ -1,0 +1,17 @@
+.footerContainer {
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    background-color: #FEFEFE51;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 0 1px;
+
+    .icon {
+        font-size: 1.1rem;
+        margin: 5px 10px;
+        color: #431864;
+    }
+}

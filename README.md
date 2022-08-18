@@ -19,11 +19,9 @@ Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bi
 
 <br><br><br><br><br><br>
 
-
 ## 🧩 **Layout**
 
-<img src=".github/video2.gif">
-
+<img src="">
 
 ## ⚙ **Tecnologias**
 
@@ -41,10 +39,10 @@ Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bi
 - clone o repositorio obs: para execultar o projeto e preciso ter o [nodejs](https://nodejs.org/en/) e o [yarn](https://classic.yarnpkg.com/en/)
 ```
 # Para clonar esse repositorio:
-$ git clone https://github.com/Diego-DevsS/notePad
+$ git clone https://github.com/dc7devs/Notepad
 
 # E abrir a pasta na sua maquina local:
-$ cd notePad
+$ cd Notepad
 
 # instale as dependencias
 $ yarn install
@@ -57,8 +55,6 @@ $ yarn start
 - ou click no lik do deploy
 
 [![Vercel](https://img.shields.io/static/v1?label=&message=VERCEL&color=black&style=for-the-badge&logo=VERCEL)](https://note-pad-diego-devss.vercel.app/)
-
-
 
 ## 📝 **License**
 

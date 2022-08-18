@@ -12,7 +12,6 @@ export default class NoteController {
             newNote.id = 0
         
         newNote.dateEdition = new Date()
-        // updates localStorage
         const newData = [
             ...oldData ? oldData : [],
             newNote
@@ -33,14 +32,11 @@ export default class NoteController {
         const notes = this.find()
         const idNote = updateNote.id
 
-        // console.log(updateNote)
-        
         for(let i in notes) {
             if(notes[i].id === idNote) {
                 notes[i].contentText = updateNote.contentText
             }
         }
-        // console.log(notes)
         localStorage.setItem('NotePad@notes', JSON.stringify(notes));
         return notes;
     }

@@ -1,84 +1,92 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 
-import TopBar from "./components/topBar/topbar"
-import Notes from "./components/notes/notes"
-import Footer from "./components/footer/footer"
-import PapyruNote from "./components/ papyrunote/papyruNote"
-import NoteController from "./controllers/notes.controllers"
+import TopBar from "./components/topBar";
+import Notes from "./components/notes";
+import Footer from "./components/footer";
+import ModalNote from "./components/modal";
 
-import "./App.scss"
-import sample from "./assets/video.mp4"
+import NoteController from "./controllers/notes.controllers";
 
-const noteController = new NoteController()
+import "./App.scss";
+import sample from "./assets/video.mp4";
+
+const noteController = new NoteController();
 
 const App = () => {
 	// notes, matriz usada para inserção das notas(JSON)
-	const [notes, setNotes] = useState([]);
-	const [isMuted, setIsMuted] = useState(true)
+	const [notes, setNotes] = useState([]); // [{}..]
+	const [contentToModal, setContentToModal] = useState([]) // {..}
+
+	const [isSoundMuted, setIsSoundMuted] = useState(true)
 	const [isUpNotes, setIsUpNotes] = useState(false)
-	const [isPapyru, setIsPapyru] = useState(false)
-	const [content, setContent] = useState([])
+	const [isOpenModal, setIsOpenModal] = useState(false)
 
-	function openPapyru(content) {
-		setIsPapyru(true)
-		setContent(content)
+	// Abrir Modal
+	function openModal(contentToModal) {
+		setIsOpenModal(true);
+		setContentToModal(contentToModal);
 	}
-	function closePapyru() {
-		setIsPapyru(false)
+	// Fechar Modal
+	function closeModal() {
+		setIsOpenModal(false);
 	}
 
+	// Tranzendo novos dados do banco de dados(localhost)
 	useEffect(() => {
 		setNotes(noteController.find())
 
-		setIsUpNotes(false)
+		setIsUpNotes(false);
 	}, [isUpNotes]);
 
+	// Criar Anotação
 	function handleCreateNote(newNote) {
-		noteController.create(newNote)
+		noteController.create(newNote);
 
-		setIsUpNotes(true)
+		setIsUpNotes(true);
 	}
 
+	// Remover anotação
 	function handleRemoveNote(removeNote) {
-		noteController.remove(removeNote)
+		noteController.remove(removeNote);
 
-		setIsUpNotes(true)
+		setIsUpNotes(true);
 	}
 
+	// Atualizar anotação
 	function handleUpdateNote(updateNote) {
-		noteController.update(updateNote)
+		noteController.update(updateNote);
 
-		setIsUpNotes(true)
+		setIsUpNotes(true);
 	}
 
 	return (
 		<>
 			<div className="container">
 				<TopBar
-					isMuted={isMuted}
-					setIsMuted={setIsMuted}
-					openPapyru={openPapyru}
+					isSoundMuted={isSoundMuted}
+					setIsSoundMuted={setIsSoundMuted}
+					openModal={openModal}
 				/>
 				<Notes
 					notes={notes}
 					RemoveData={handleRemoveNote}
-					openPapyru={openPapyru}
+					openModal={openModal}
 				/>
-				<Footer />
 				{
-					isPapyru ?
-						<PapyruNote
-							CreateData={handleCreateNote}
-							content={content}
-							closePapyru={closePapyru}
-							UpdateData={handleUpdateNote}
+					isOpenModal ?
+						<ModalNote
+							createData={handleCreateNote}
+							contentToModal={contentToModal}
+							closeModal={closeModal}
+							updateData={handleUpdateNote}
 						/>
-					: isPapyru
+					: isOpenModal
 				}
+				<Footer />
 				<video
 					className='myVideo'
 					autoPlay
-					muted={isMuted}
+					muted={isSoundMuted}
 					loop
 				>
 					<source
