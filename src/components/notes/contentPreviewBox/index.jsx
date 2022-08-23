@@ -1,27 +1,33 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 
 import { HiTrash } from "react-icons/hi"
 import { format } from "date-fns"
 import "./style.scss"
 
-const NoteContentPreviewBox = ({ noteBox, RemoveData, openModal}) => {
-    const open = function() {
-        openModal(noteBox);
-    }
+const NoteContentPreviewBox = ({ noteBox, RemoveData, openModal }) => {
     const container = document.querySelector("main.notion-container");
-    if (noteBox) {
-        container.classList.remove("toggerBackground");
-    }
+    const [containNoteBox, setContainNoteBox] = useState(container.hasChildNodes()); // false
     
-    if(!noteBox) {
-        container.classList.add("toggerBackground");
-    }
-    const remove = () => {
-        RemoveData(noteBox);
+    const PreviewBoxManager = new class {
+        // abrir modal apartir da caixa de previsualização
+        open() {
+            openModal(noteBox);
+        }
+        remove() {
+            RemoveData(noteBox);
+            // if(!container.hasChildNodes()) {
+            //     setContainNoteBox(true);
+            // }
+        }
     }
 
+    // useEffect(() => {
+    //     if(containNoteBox) {
+    //         container.classList.remove("toggerBackground");
+    //     }
+    // }, [containNoteBox]);
+
     const parser = new DOMParser();
-    console.log(noteBox.contentText);
     const htmlDoc = parser.parseFromString(noteBox.contentText, "text/html");
 
     return (
@@ -29,13 +35,12 @@ const NoteContentPreviewBox = ({ noteBox, RemoveData, openModal}) => {
             <div className="titlePreview">
                 <p>
                     {
-                        htmlDoc.querySelector("body > h1") !== undefined || htmlDoc.querySelector("body > h1") !== null ?
-                        htmlDoc.querySelector("body > h1").innerText : "🏷"
+                        htmlDoc.querySelector("body > h1, h2, h3")?.innerText || "🏷"
                     }
                 </p>
                 <button
-                    className="trash"
-                    onClick={remove}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+                    className="trash" 
+                    onClick={PreviewBoxManager.remove}
                 >                                                       
                     <HiTrash />
                 </button>
@@ -43,12 +48,11 @@ const NoteContentPreviewBox = ({ noteBox, RemoveData, openModal}) => {
 
             <div
                 className="timeBoxPreview"
-                onClick={open}
+                onClick={PreviewBoxManager.open}
             >
                 <code className="textPreview">
                     {
-                        htmlDoc.querySelector("body > p") !== undefined || htmlDoc.querySelector("body > p") !== null ?
-                        htmlDoc.querySelector("body > p").innerText : "📝..."
+                        htmlDoc.querySelector("body > p")?.innerText || "📝..."
                     }
                 </code>
 

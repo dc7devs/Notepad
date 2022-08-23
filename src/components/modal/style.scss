@@ -9,14 +9,10 @@
 
     display: flex;
     justify-content: center;
+    align-items: center;
+    
     .navBarEditor {
         display: none;
-    }
-    .tox.tox-tinymce {
-        height: 500px;
-        width: calc(100vw - 15%);
-        margin-top: 5%;
-        resize: none;
     }
 }
 
@@ -29,17 +25,31 @@
         flex-direction: column;
         .navBarEditor {
             display: flex;
-            height: 50px;
-            background-color: #431864;
+            
+            align-items: center;
+            justify-content: space-between;
+
+            height: 40px;
+            padding: 0 20px;
+            background-color: #fff;
             .saveButton {
-                width: 100%;
+                width: auto;
+                color: #222F3E;
                 background: transparent;
-                font-size: 20px;
+                font-size: 23px;
+                text-align: center;
+                margin: 5px 0;
+                border: 0;
             }
-        }
-        .tox.tox-tinymce {
-            margin: 0;
-            width: 100vw;
+
+            .CalcelButton {
+                color: #222F3E;
+                background: transparent;
+                font-size: 23px;
+                font-family: 'Poppins';
+                vertical-align: super;
+                border: 0;
+            }
         }
     }
 }

@@ -58,7 +58,7 @@
             flex-grow: 3;
             margin: 10px 0;
             flex-wrap: wrap;
-            .note-box {
+            .notePreviewBox {
                 width: calc(100% - 10px);
             }
         }
@@ -68,21 +68,6 @@
             border-radius: 0;
             a {
                 font-size: 1.3rem;
-            }
-        }
-
-        .papyruWidow {
-            z-index: 1;
-            .pageNumber {
-                display: static;
-                margin-left: 20px;
-                margin-bottom: 20px;
-            }
-            .close {
-                z-index: 1;
-                font-size: 2rem;
-                top: 90vh;
-                right: 90vw;
             }
         }
     }

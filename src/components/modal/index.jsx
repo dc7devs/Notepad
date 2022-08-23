@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react"
 import { Editor } from "@tinymce/tinymce-react"
 
 import { AiOutlineCheck } from "react-icons/ai"
+import { BiArrowBack } from "react-icons/bi"
 import "./style.scss";
 
 const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
@@ -25,7 +26,7 @@ const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
             closeModal();
         }
     }
-
+    
     let id = contentToModal.id
     function update() {
         updateData({
@@ -51,36 +52,45 @@ const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
         >
             <nav className="navBarEditor">
                 <button
+                    className="CalcelButton"
+                    onClick={closeModal}
+                >
+                    <BiArrowBack />
+                </button>
+                <button
                     className="saveButton"
-                    onClick={closeSave}
+                    onClick={closeModal}
                 >
                     <AiOutlineCheck />
                 </button>
             </nav>
             <Editor
-                className="tinymce"
-                apiKey='gxp84k8sngseey44nqheo7rh8ih5ssi16cfk1x601a83rihc'
+                className='tinymce'
+                apiKey={process.env.REACT_APP_API_KEY}
                 onInit={(evt, editor) => editorRef.current = editor}
                 initialValue={contentText}
                 onBlur={() => autoSave()}
                 init={{
-                    height: 500,
                     menubar: false,
+                    readonly: true,
+                    statusbar: false,
+                    height: 500,
+                    resize: false,
                     plugins: [
-                    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
-                    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                    'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount', 'export'
+                        'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
+                        'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+                        'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount', 'export'
                     ],
                     toolbar: 'undo redo | blocks | export |' +
                     'bold italic forecolor | alignleft aligncenter ' +
                     'alignright alignjustify | bullist numlist outdent indent | ' +
                     'removeformat | help',
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-                    // init_instance_callback: (editor) => {
-                    //     editor.on('keyup', () => {
-                    //         autoSave();
-                    //     });
-                    // }
+                    placeholder: 'Insira a sua anotação aqui...',
+                    mobile: {
+                        toolbar_mode: 'scrolling',
+                        min_height: 500
+                    }
                 }}
             />
         </div>

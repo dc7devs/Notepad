@@ -15,7 +15,7 @@
 
 
 <img align="right" width="250" src="./.github/lisa.png" alt="Lisa">
-Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bibliotecária Lisa dos Cavaleiros de Favonius, ele permite criar ou alterar textos, que por sua vez são armazenados no localStorage do navegador.
+Um bloco de anotações baseado no jogo Genshin Impact mas especificamente na bibliotecária Lisa dos Cavaleiros de Favonius, ele permite criar, ditar e salvar textos e anotações. Você também pode exportar para a sua maquina no formato pdf.
 
 <br><br><br><br><br><br>
 
@@ -58,4 +58,4 @@ $ yarn start
 
 ## 📝 **License**
 
-- [**Licence**](https://github.com/Diego-DevsS/notePad/blob/main/LICENSE)
+- [**Licence**](https://github.com/dc7devs/Notepad/blob/main/LICENSE)

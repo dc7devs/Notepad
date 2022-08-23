@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import {  }
 
 import TopBar from "./components/topBar";
 import Notes from "./components/notes";
@@ -8,7 +9,7 @@ import ModalNote from "./components/modal";
 import NoteController from "./controllers/notes.controllers";
 
 import "./App.scss";
-import sample from "./assets/video.mp4";
+const sample = require("./assets/video.mp4");
 
 const noteController = new NoteController();
 
@@ -33,7 +34,7 @@ const App = () => {
 
 	// Tranzendo novos dados do banco de dados(localhost)
 	useEffect(() => {
-		setNotes(noteController.find())
+		setNotes(noteController.find());
 
 		setIsUpNotes(false);
 	}, [isUpNotes]);

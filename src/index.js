@@ -1,11 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './Global.scss';
+import { render } from 'react-dom';
 import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+import './Global.scss';
+
+render(
+  <App />,
   document.getElementById('root')
 );
