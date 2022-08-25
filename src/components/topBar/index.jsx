@@ -7,7 +7,6 @@ import "./style.scss";
 import iconAdventurer from "../../assets/Icon_Adventurer_Handbook.png"
 
 const TopBar = ({ isSoundMuted, setIsSoundMuted, openModal }) => {
-
   function open(){
     openModal('');
   }

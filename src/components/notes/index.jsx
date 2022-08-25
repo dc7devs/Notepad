@@ -3,16 +3,17 @@ import React from "react";
 import NoteContentPreviewBox from "./contentPreviewBox";
 import "./style.scss";
 
-const Notes = ({ notes, RemoveData, openModal }) => {
+const Notes = ({ notes, RemoveData, openModal, setBackground }) => {
   return (
-    <main className="notion-container toggerBackground">
+    <main className="notion-container backgroundContainBook">
       {
-        notes.map(noteBox => (
+        notes.map(NoteBox => (
           <NoteContentPreviewBox
-            key={noteBox.id}
-            noteBox={noteBox}
+            key={NoteBox.id}
+            NoteBox={NoteBox}
             RemoveData={RemoveData}
             openModal={openModal}
+            setBackground={setBackground}
           />
         ))
       }

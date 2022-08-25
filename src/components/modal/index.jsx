@@ -6,10 +6,11 @@ import { BiArrowBack } from "react-icons/bi"
 import "./style.scss";
 
 const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
-    const [contentText, setContentText] = useState(contentToModal.contentText);
     const editorRef = useRef(null);
+    const [contentText, setContentText] = useState(contentToModal.contentText);
+    const id = contentToModal.id
 
-    function closeSave () {
+    function closeAndSave () {
         update();
         if (!contentText) {
             closeModal();
@@ -27,12 +28,11 @@ const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
         }
     }
     
-    let id = contentToModal.id
     function update() {
         updateData({
             contentText,
             id
-        })
+        });
     }
     function autoSave() {
         update();
@@ -48,8 +48,11 @@ const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
     return (
         <div
             className="modalWidow"
-            onClick={closeSave}
-        >
+            >
+            <span
+                className="modalBackground"
+                onClick={closeAndSave}
+            ></span>
             <nav className="navBarEditor">
                 <button
                     className="CalcelButton"
@@ -59,13 +62,13 @@ const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
                 </button>
                 <button
                     className="saveButton"
-                    onClick={closeModal}
+                    onClick={closeAndSave}
                 >
                     <AiOutlineCheck />
                 </button>
             </nav>
             <Editor
-                className='tinymce'
+                // selector='.tinymce'
                 apiKey={process.env.REACT_APP_API_KEY}
                 onInit={(evt, editor) => editorRef.current = editor}
                 initialValue={contentText}
@@ -74,23 +77,23 @@ const ModalNote = ({ createData, contentToModal, closeModal, updateData }) => {
                     menubar: false,
                     readonly: true,
                     statusbar: false,
-                    height: 500,
                     resize: false,
+                    min_height: 500,
+                    selector: "textarea",
+                    mobile: {
+                        toolbar_mode: 'scrolling'
+                    },
                     plugins: [
                         'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
                         'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
-                        'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount', 'export'
+                        'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
                     ],
-                    toolbar: 'undo redo | blocks | export |' +
+                    toolbar: 'undo redo | blocks | ' +
                     'bold italic forecolor | alignleft aligncenter ' +
                     'alignright alignjustify | bullist numlist outdent indent | ' +
                     'removeformat | help',
                     content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:14px }',
-                    placeholder: 'Insira a sua anotação aqui...',
-                    mobile: {
-                        toolbar_mode: 'scrolling',
-                        min_height: 500
-                    }
+                    placeholder: 'Insira a sua anotação aqui...'
                 }}
             />
         </div>

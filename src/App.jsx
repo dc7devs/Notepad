@@ -15,45 +15,55 @@ const noteController = new NoteController();
 
 const App = () => {
 	// notes, matriz usada para inserção das notas(JSON)
-	const [notes, setNotes] = useState([]); // [{}..]
-	const [contentToModal, setContentToModal] = useState([]) // {..}
+	const [notes, setNotes] = useState([]);
+	const [contentToModal, setContentToModal] = useState([]);
 
-	const [isSoundMuted, setIsSoundMuted] = useState(true)
-	const [isUpNotes, setIsUpNotes] = useState(false)
-	const [isOpenModal, setIsOpenModal] = useState(false)
+	const [isSoundMuted, setIsSoundMuted] = useState(true);
+	const [isUpNotes, setIsUpNotes] = useState(false);
+	const [isOpenModal, setIsOpenModal] = useState(false);
 
-	// Abrir Modal
-	function openModal(contentToModal) {
-		setIsOpenModal(true);
-		setContentToModal(contentToModal);
-	}
-	// Fechar Modal
-	function closeModal() {
-		setIsOpenModal(false);
-	}
+	const containElement = document.querySelector("main.notion-container")?.hasChildNodes();
 
-	// Tranzendo novos dados do banco de dados(localhost)
+	// Trazer e renderizar novos dados do banco de dados(localstorage)
 	useEffect(() => {
 		setNotes(noteController.find());
 
 		setIsUpNotes(false);
 	}, [isUpNotes]);
 
-	// Criar Anotação
+	// Mudar background
+	useEffect(() => {
+		const elemento = document.querySelector("main.notion-container");
+
+		if (containElement)
+			elemento.classList.remove("backgroundContainBook");
+		else
+			elemento.classList.add("backgroundContainBook");
+	}, [containElement]);
+
+	// Abrir e Fechar Modal
+	function openModal(contentToModal) {
+		setIsOpenModal(true);
+		setContentToModal(contentToModal);
+	}
+
+	function closeModal() {
+		setIsOpenModal(false);
+	}
+
+	// Criar, remove e atualizar anotação
 	function handleCreateNote(newNote) {
 		noteController.create(newNote);
 
 		setIsUpNotes(true);
 	}
 
-	// Remover anotação
 	function handleRemoveNote(removeNote) {
 		noteController.remove(removeNote);
 
 		setIsUpNotes(true);
 	}
 
-	// Atualizar anotação
 	function handleUpdateNote(updateNote) {
 		noteController.update(updateNote);
 
