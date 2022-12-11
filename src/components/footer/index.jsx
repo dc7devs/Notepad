@@ -15,7 +15,7 @@ const Footer = () => {
                 <FaLinkedin />
             </a>
             <a
-                href="https://github.com/Diego-DevsS"
+                href="https://github.com/dc7devs"
                 target="_blank"
                 rel="noreferrer"
                 className="icon"
